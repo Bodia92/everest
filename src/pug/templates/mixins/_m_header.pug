@@ -1,2 +1,30 @@
 mixin header
 	header.header
+	.header_in.section_in
+		a(href="#").header_logo
+			img(src="images/header_logo.png", alt="logo")
+		nav.header_menu
+			+menu({
+				gl_class: 'header_menu',
+				items: [
+					{title: 'О нас', url: '#', active: true},
+					{title: 'Решения', url: '#', active: false},
+					{title: 'Аналитика', url: '#', active: false},
+					{title: 'Партнеры', url: '#', active: false},
+					{title: 'Контакты', url: '#', active: false},
+					{title: 'Подписка', url: '#', active: false}
+				]
+			})
+			+social({
+				header_block: 'header_social',
+				items: [
+					{name_icon: 'facebook', mod_link: 'social_link--size_1_mod', mod_icon:'icon--size_mod'},
+					{name_icon: 'twitter', mod_link: 'social_link--size_2_mod', mod_icon:'icon--size_mod'},
+					{name_icon: 'rss', mod_link: 'social_link--size_3_mod', mod_icon:'icon--size_mod'},
+					{name_icon: 'youtube', mod_link: 'social_link--size_4_mod', mod_icon:'icon--size_mod'}
+				]
+			})
+		.menu_trigger.menuTrigger
+			span.menu_trigger_decor
+	// sidebars
+	.main_sidebar
