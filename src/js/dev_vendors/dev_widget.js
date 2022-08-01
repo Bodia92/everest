@@ -32,4 +32,4 @@ const pageWidgetInit = () => {
 	}
 };
 
-export default pageWidgetInit;
+// export default pageWidgetInit;
