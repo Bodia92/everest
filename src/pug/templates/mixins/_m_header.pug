@@ -24,7 +24,18 @@ mixin header
 					{name_icon: 'youtube', mod_link: 'social_link--size_4_mod', mod_icon:'icon--size_mod'}
 				]
 			})
+			a(href='#').header_search
+				+icon('search', 'icon--size_mod')
+			ul.header_lang
+				each langHeader in ['Ua','Ru']
+					li.header_lang__item
+						a.header_lang__link(href="#")= langHeader
+			//- +lang({
+			//- 	header_lang: 'header_lang',
+			//- 	items:[
+			//- 		{name: 'Ua'},
+			//- 		{name: 'Ru'}
+			//- 	]
+			//- })
 		.menu_trigger.menuTrigger
 			span.menu_trigger_decor
-	// sidebars
-	.main_sidebar
