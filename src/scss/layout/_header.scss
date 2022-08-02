@@ -153,6 +153,36 @@
 
 //---------------------------------------------logo###
 
+.lang__list {
+	@extend %global_flex_block_row_wrap_flex-start_center;
+}
+.lang__item {
+	position: relative;
+
+	&:not(:last-child) {
+		padding-right: 1rem;
+		// margin-right: 5px;
+		&::after {
+			content: "";
+			position: absolute;
+			width: 1.2px;
+			height: 1.6rem;
+			top: 50%;
+			right: 0;
+			transform: translate(-5px, -50%);
+			background-color: $gray_mod;
+		}
+	}
+}
+
+.lang__link {
+	display: block;
+
+	font-size: 1.6rem;
+	line-height: 1.31;
+	text-transform: uppercase;
+	color: $gray_mod;
+}
 //---------------------------------------------trigger
 @mixin user_menu_butt_line {
 	position: absolute;
