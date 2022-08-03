@@ -10,6 +10,7 @@ import langInit from '../components/langInit';
 import socialInit from '../components/socialInit';
 import menuHeader from '../components/menuHeader';
 import menuTrigger from '../components/menuTrigger';
+import gridItemInit from '../components/gridItemInit';
 
 export default class Layout {
 	constructor() {
@@ -24,6 +25,7 @@ export default class Layout {
 		socialInit();
 		menuHeader();
 		menuTrigger();
+		gridItemInit();
 	}
 
 	init() {

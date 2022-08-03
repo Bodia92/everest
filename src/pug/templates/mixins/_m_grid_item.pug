@@ -1,0 +1,43 @@
+-
+	let gridItem = [
+		{
+			tag: 'Здравоохранение ',
+			autor: 'Автор: Владимир Мищенко',
+			title: 'Противостояние кибератакам и вирусам с помощью Bitdefender для эффективного администрирования безопасности в медучреждении',
+			text: '1',
+			background: '1',
+			picture: '1',
+			data: '1',
+			time: '1',
+			icon: 'light'
+		},
+		{
+			tag: 'Здравоохранение ',
+			autor: 'Автор: Владимир Мищенко',
+			title: 'Противостояние кибератакам и вирусам с помощью Bitdefender для эффективного администрирования безопасности в медучреждении',
+			text: '1',
+			background: '1',
+			picture: '1',
+			data: '1',
+			time: '1',
+			icon: 'light'
+		}
+	];
+
+mixin grid_item (gridItem)
+	.grid_item
+		if gridItem.picture
+			a.grid_item__image_link(href="#")
+				+picture({
+					img: `${gridItem.picture}`,
+					class: 'grid_item__image_in',
+					img_class: 'grid_item__image_img',
+					alt: 'item',
+				})
+			.grid_item__content
+				gridItem.picture_tags
+					if gridItem.tag
+						.grid_item__content_tag= gridItem.tag
+					if gridItem.icon
+						span.grid_item__content_icon
+							+icon( `${gridItem.icon}`, 'icon--size_mod')
