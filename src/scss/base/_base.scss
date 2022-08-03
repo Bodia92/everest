@@ -67,6 +67,7 @@ body {
 a {
 	text-decoration: none;
 	color: $color_link_base;
+	@extend %transition_color;
 
 	&:hover,
 	&:focus {

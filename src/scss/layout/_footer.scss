@@ -12,14 +12,19 @@
 }
 
 .footer__in {
+}
+.footer__body {
 	@extend %global_flex_block_row_nowrap_flex-start;
+	margin: -3rem -3rem;
+	@include bp($point_2) {
+		flex-wrap: wrap;
+	}
 }
 
 .footer__column {
-	min-width: 18rem;
-	&:not(:last-child) {
-		margin-right: 6rem;
-	}
+	flex-grow: 1;
+	min-width: 24rem;
+	padding: 3rem 3rem;
 }
 //---------------------------------------------logo
 
@@ -27,6 +32,17 @@
 	display: block;
 	max-width: 16rem;
 	flex-grow: 1;
+
+	@include bp($point_2, min) {
+		&:not(:last-child) {
+			margin-bottom: 14rem;
+		}
+	}
+	@include bp($point_3) {
+		&:not(:last-child) {
+			margin-bottom: 4rem;
+		}
+	}
 }
 
 .footer__logo_img {
@@ -60,6 +76,9 @@
 
 .footer__social {
 	color: $white;
+	&:not(:last-child) {
+		margin-bottom: 1.8rem;
+	}
 }
 
 .footer__text {
@@ -136,11 +155,18 @@
 //----------------------------------------------footer form
 
 .footer__form {
-	@extend %global_flex_block_row_nowrap_flex-start;
+	@extend %global_flex_block_row_wrap_flex-start;
+
+	margin-right: -1.8rem;
+	@include bp($point_5) {
+		justify-content: center;
+	}
 }
 
 .form_input {
-	width: 100%;
+	flex-grow: 1;
+	margin-bottom: 2rem;
+
 	&:not(:last-child) {
 		margin-right: 1.8rem;
 	}

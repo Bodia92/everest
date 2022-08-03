@@ -22,6 +22,9 @@
 
 .header__social {
 	color: $color_link_base;
+	&:not(:last-child) {
+		margin-right: 2.4rem;
+	}
 }
 
 //---------------------------------------------layout###
