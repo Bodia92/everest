@@ -1,11 +1,11 @@
 mixin header
 	header.header
 		.header_in.section_in
-			a(href="#").header_logo
-				img(src="images/header_logo.png", alt="logo")
-			nav.header_menu
+			a(href="#").header__logo
+				img(src="images/header_logo.png", class="header__logo_img" alt="logo")
+			nav.header__menu
 				+menu({
-					gl_class: 'header_menu',
+					gl_class: 'header__menu',
 					items: [
 						{title: 'О нас', url: '#', active: true},
 						{title: 'Решения', url: '#', active: false},
@@ -16,7 +16,7 @@ mixin header
 					]
 				})
 				+social({
-					mod_block: 'header_social',
+					mod_block: 'header__social',
 					items: [
 						{name_icon: 'facebook', mod_link: 'social_link--size_1_mod', mod_icon:'icon--size_mod'},
 						{name_icon: 'twitter', mod_link: 'social_link--size_2_mod', mod_icon:'icon--size_mod'},
@@ -24,14 +24,14 @@ mixin header
 						{name_icon: 'youtube', mod_link: 'social_link--size_4_mod', mod_icon:'icon--size_mod'}
 					]
 				})
-				a(href='#').header_search
+				a(href='#').header__search
 					+icon('search', 'icon--size_mod')
 				+lang({
-					mod_lang: 'header_lang',
+					mod_lang: 'header__lang',
 					items:[
 						{name: 'Ua'},
 						{name: 'Ru'}
 					]
 				})
-			.menu_trigger.menuTrigger
-				span.menu_trigger_decor
+			.header__menu_trigger.menuTrigger
+				span.header__menu_trigger_decor

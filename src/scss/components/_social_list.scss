@@ -1,0 +1,36 @@
+@import "ScssHelpers/helpers_all";
+
+.social_list {
+	@extend %global_flex_block_row_nowrap_flex-start_center;
+
+	&:not(:last-child) {
+		margin-right: 2.4rem;
+	}
+}
+.social_item {
+	&:not(:last-child) {
+		margin-right: 3rem;
+	}
+}
+
+.social_link {
+	display: block;
+	color: $color_link_base;
+
+	&--size_1_mod {
+		width: 1rem;
+		height: 1.8rem;
+	}
+	&--size_2_mod {
+		width: 2rem;
+		height: 1.6rem;
+	}
+	&--size_3_mod {
+		width: 3.4rem;
+		height: 2.8rem;
+	}
+	&--size_4_mod {
+		width: 2rem;
+		height: 1.4rem;
+	}
+}

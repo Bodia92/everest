@@ -1,0 +1,73 @@
+@import "ScssHelpers/helpers_all";
+
+//---------------------------------------------menu
+.header__menu {
+	@extend %global_flex_block_row_wrap_flex-start_center;
+
+	@extend %transition_transform;
+
+	@include bp($point_3) {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: var(--full-screen);
+		overflow-x: hidden;
+		overflow-y: auto;
+		background: lightgoldenrodyellow;
+		transform: translate(0, -100%);
+
+		@include flex_block(row, wrap, center, center);
+
+		body.menu_open & {
+			transform: translate(0, 0);
+		}
+	}
+}
+
+.header__menu__list {
+	@extend %global_flex_block_row_wrap_flex-start_center;
+
+	&:not(:last-child) {
+		margin-right: 3rem;
+	}
+
+	@include bp($point_3) {
+		height: 100%;
+		width: 100%;
+		flex: 0 0 auto;
+		flex-direction: column;
+		justify-content: center;
+		padding: var(--height-header) var(--gl-indent);
+		margin: auto;
+	}
+}
+
+.header__menu__item {
+	&:last-child {
+		margin: 0;
+	}
+
+	@include bp($point_2, min) {
+		margin-right: var(--gl-indent);
+	}
+
+	@include bp($point_3) {
+		margin-bottom: var(--gl-indent);
+		flex: 0 0 auto;
+	}
+}
+
+.header__menu__link {
+	font-size: 1.2rem;
+	line-height: 1.33;
+	color: $color_text_base;
+	text-transform: uppercase;
+
+	transition: color 0.3s ease;
+	.header__menu__item--active_mod & {
+		color: $color_tag_mod_1;
+	}
+}
+
+//---------------------------------------------menu###

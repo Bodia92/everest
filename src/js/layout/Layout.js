@@ -6,6 +6,9 @@ import { documentReady, pageLoad, onWindowResize } from 'utils';
 // ------------------  import components
 import { calcViewportHeight } from '../utils';
 // ------------------  import components###
+import langInit from '../components/langInit';
+import socialInit from '../components/socialInit';
+import menuHeader from '../components/menuHeader';
 
 export default class Layout {
 	constructor() {
@@ -16,6 +19,9 @@ export default class Layout {
 	loadFunc() {
 		console.log('layout load');
 		calcViewportHeight();
+		langInit();
+		socialInit();
+		menuHeader();
 	}
 
 	init() {
