@@ -28,7 +28,7 @@
 	}
 }
 
-.header__menu__list {
+.header__menu_list {
 	@extend %global_flex_block_row_wrap_flex-start_center;
 
 	@include bp($point_2, min) {
@@ -47,7 +47,7 @@
 	}
 }
 
-.header__menu__item {
+.header__menu_item {
 	@include bp($point_2, min) {
 		&:not(:last-child) {
 			margin-right: var(--gl-indent);
@@ -60,14 +60,14 @@
 	}
 }
 
-.header__menu__link {
+.header__menu_link {
 	font-size: 1.2rem;
 	line-height: 1.33;
 	color: $color_text_base;
 	text-transform: uppercase;
 
 	@extend %transition_color;
-	.header__menu__item--active_mod & {
+	.header__menu_item--active_mod & {
 		color: $color_tag_mod_1;
 	}
 
