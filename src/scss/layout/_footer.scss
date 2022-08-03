@@ -2,8 +2,153 @@
 	width: 100%;
 	min-height: var(--height-footer);
 	flex: 0 0 auto;
+	padding: var(--gl-indent);
 
 	font-size: 1rem;
+	color: $white;
+	background-color: $color_footer_bg;
 
 	will-change: transform;
 }
+
+.footer__in {
+	@extend %global_flex_block_row_nowrap_flex-start;
+}
+
+.footer__column {
+	min-width: 18rem;
+	&:not(:last-child) {
+		margin-right: 6rem;
+	}
+}
+//---------------------------------------------logo
+
+.footer__logo {
+	display: block;
+	max-width: 16rem;
+	flex-grow: 1;
+}
+
+.footer__logo_img {
+	@extend %cover_img;
+}
+
+//---------------------------------------------logo###
+
+//---------------------------------------------footer title
+
+.footer__title {
+	padding-bottom: 2rem;
+	font-size: 1.4rem;
+	line-height: 1.36;
+	text-transform: uppercase;
+	border-bottom: solid 1px $white;
+	&:not(:last-child) {
+		margin-bottom: 0.8rem;
+	}
+}
+
+.footer__subtitle {
+	font-size: 1.4rem;
+	line-height: 1.36;
+	text-transform: uppercase;
+	&:not(:last-child) {
+		margin-bottom: 2.4rem;
+	}
+}
+//---------------------------------------------footer title###
+
+.footer__social {
+	color: $white;
+}
+
+.footer__text {
+	font-size: 1.2rem;
+	line-height: 1.36;
+	&:not(:last-child) {
+		margin-bottom: 2.4rem;
+	}
+}
+
+//----------------------------------------------copyright
+
+.footer__copyright {
+	display: grid;
+	grid-template-columns: 3rem 1fr;
+}
+.footer__copyright_icon {
+	grid-row: span 2;
+	align-self: start;
+
+	font-size: 2.6rem;
+	font-weight: 300;
+	line-height: 1.3;
+}
+.footer__copyright_text {
+	font-size: 1.2rem;
+	line-height: 1.33;
+}
+
+//----------------------------------------------copyright###
+
+//----------------------------------------------footer menu
+
+.footer__menu_list {
+}
+
+.footer__menu_item {
+	padding-bottom: 2rem;
+	&:not(:last-child) {
+		margin-bottom: 0.8rem;
+		border-bottom: solid 1px $white;
+	}
+}
+
+.footer__menu_link {
+	font-size: 1.4rem;
+	font-weight: 500;
+	line-height: 1.36;
+	color: $white;
+	text-transform: uppercase;
+}
+
+//----------------------------------------------footer menu###
+
+//----------------------------------------------footer info
+
+.footer__info_list {
+}
+
+.footer__info_item {
+	&:not(:last-child) {
+		margin-bottom: 3rem;
+	}
+}
+
+.footer__info_link {
+	font-size: 1.4rem;
+	line-height: 1.36;
+	color: $white;
+}
+
+//----------------------------------------------footer info###
+
+//----------------------------------------------footer form
+
+.footer__form {
+	@extend %global_flex_block_row_nowrap_flex-start;
+}
+
+.form_input {
+	width: 100%;
+	&:not(:last-child) {
+		margin-right: 1.8rem;
+	}
+}
+
+.footer__form_btn {
+	@extend %btn_form;
+	@extend %btn_form_size;
+}
+
+//----------------------------------------------footer form###

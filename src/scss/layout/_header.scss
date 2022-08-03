@@ -20,6 +20,10 @@
 	@extend %global_flex_block_row_nowrap_space_between_center;
 }
 
+.header__social {
+	color: $color_link_base;
+}
+
 //---------------------------------------------layout###
 
 //---------------------------------------------logo
