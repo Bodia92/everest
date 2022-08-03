@@ -7,7 +7,7 @@
 :root {
 	--full-screen: calc(var(--vh, 1vh) * 100);
 
-	--height-header: 10rem;
+	--height-header: 9rem;
 	--height-footer: 10rem;
 	--gl-indent: 3rem;
 }
@@ -36,6 +36,11 @@ body {
 
 	@supports (display: grid) {
 		display: block;
+	}
+
+	&.body--open_menu_state {
+		overflow: hidden;
+		@extend %transition_transform;
 	}
 }
 

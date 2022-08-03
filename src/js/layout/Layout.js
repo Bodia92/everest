@@ -9,6 +9,7 @@ import { calcViewportHeight } from '../utils';
 import langInit from '../components/langInit';
 import socialInit from '../components/socialInit';
 import menuHeader from '../components/menuHeader';
+import menuTrigger from '../components/menuTrigger';
 
 export default class Layout {
 	constructor() {
@@ -22,6 +23,7 @@ export default class Layout {
 		langInit();
 		socialInit();
 		menuHeader();
+		menuTrigger();
 	}
 
 	init() {

@@ -1,7 +1,7 @@
 @import "ScssHelpers/helpers_all";
 
 .social_list {
-	@extend %global_flex_block_row_nowrap_flex-start_center;
+	@extend %global_flex_block_row_wrap_flex-start_center;
 
 	&:not(:last-child) {
 		margin-right: 2.4rem;

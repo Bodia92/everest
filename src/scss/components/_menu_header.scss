@@ -14,12 +14,15 @@
 		height: var(--full-screen);
 		overflow-x: hidden;
 		overflow-y: auto;
-		background: lightgoldenrodyellow;
-		transform: translate(0, -100%);
+
+		padding: 3rem;
 
 		@include flex_block(row, wrap, center, center);
 
-		body.menu_open & {
+		background: lightgoldenrodyellow;
+		transform: translate(-100%, 0);
+
+		body.body--open_menu_state & {
 			transform: translate(0, 0);
 		}
 	}
@@ -28,12 +31,13 @@
 .header__menu__list {
 	@extend %global_flex_block_row_wrap_flex-start_center;
 
-	&:not(:last-child) {
-		margin-right: 3rem;
+	@include bp($point_2, min) {
+		&:not(:last-child) {
+			margin-right: 3rem;
+		}
 	}
 
 	@include bp($point_3) {
-		height: 100%;
 		width: 100%;
 		flex: 0 0 auto;
 		flex-direction: column;
@@ -44,12 +48,10 @@
 }
 
 .header__menu__item {
-	&:last-child {
-		margin: 0;
-	}
-
 	@include bp($point_2, min) {
-		margin-right: var(--gl-indent);
+		&:not(:last-child) {
+			margin-right: var(--gl-indent);
+		}
 	}
 
 	@include bp($point_3) {
@@ -64,9 +66,13 @@
 	color: $color_text_base;
 	text-transform: uppercase;
 
-	transition: color 0.3s ease;
+	@extend %transition_color;
 	.header__menu__item--active_mod & {
 		color: $color_tag_mod_1;
+	}
+
+	@include bp($point_3) {
+		font-size: 2rem;
 	}
 }
 
