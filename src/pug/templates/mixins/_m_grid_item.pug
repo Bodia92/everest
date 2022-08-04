@@ -17,8 +17,7 @@
 			data: '00 окт 20',
 			time: '~ 1 мин',
 			icon: 'light',
-			style_mod: 'style_2_mod',
-			pos_mod: ' pos_2_mod'
+			style_mod: 'style_2_mod'
 		},
 		{
 			tag: 'Страхование',
@@ -27,8 +26,7 @@
 			data: '00 окт 20',
 			time: '~ 1 мин',
 			icon: 'light',
-			style_mod: 'style_2_mod',
-			pos_mod: ' pos_2_mod'
+			style_mod: 'style_2_mod'
 		},
 		{
 			tag: 'Здравоохранение',
@@ -37,8 +35,7 @@
 			data: '00 окт 20',
 			time: '~ 1 мин',
 			icon: 'light',
-			style_mod: 'style_2_mod',
-			pos_mod: ' pos_2_mod'
+			style_mod: 'style_2_mod'
 		},
 		{
 			tag: 'Телекоммуникации',
@@ -47,8 +44,18 @@
 			data: '00 окт 20',
 			time: '~ 1 мин',
 			icon: 'light',
-			style_mod: 'style_2_mod',
-			pos_mod: ' pos_2_mod'
+			style_mod: 'style_2_mod'
+		},
+		{
+			new_icon: 'NEW!',
+			tag_name: 'Digital',
+			tag_title: 'transformation',
+			tag_subtitle: 'по-украински',
+			autor: 'Юрий Чубатюк',
+			background: 'item-2.jpg',
+			video: 'play',
+			style_mod: 'style_1_mod',
+			pos_mod: 'pos_2_mod'
 		},
 		{
 			picture: 'item-4.jpg',
@@ -62,7 +69,7 @@
 			icon: 'light',
 			video: 'play',
 			style_mod: 'style_2_mod',
-			pos_mod: 'pos_2_mod'
+			pos_mod: 'pos_3_mod'
 		}
 	];
 
@@ -84,9 +91,15 @@ mixin grid_item (gridItem)
 					alt: 'item',
 				})
 		.grid_item__content(class=gridItem.style_mod)
+			if gridItem.new_icon
+				.grid__new_icon= gridItem.new_icon
 			.grid_item__tags
+				if gridItem.tag_title
+					span.grid_item__tags_title= gridItem.tag_name
+					span.grid_item__tags_title= gridItem.tag_title
+					span.grid_item__tags_subtitle= gridItem.tag_subtitle
 				if gridItem.tag
-					a.grid_item__tag(class= gridItem.tag_mod)= gridItem.tag
+					a.grid_item__tag(class= gridItem.tag_mod href="#")= gridItem.tag
 				if gridItem.icon
 					span.grid_item__icon
 						+icon( `${gridItem.icon}`, 'icon--size_mod')
@@ -95,7 +108,7 @@ mixin grid_item (gridItem)
 			if gridItem.title
 				a.grid_item__title(href="#")= gridItem.title
 			if gridItem.text
-				.grid_item__text= gridItem.text
+				p.grid_item__text= gridItem.text
 			if gridItem.data
 				.grid_item__info
 					span.grid_item__info_data= gridItem.data

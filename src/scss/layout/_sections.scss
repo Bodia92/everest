@@ -6,9 +6,6 @@
 
 	font-size: 1rem;
 
-	&--grid_mode {
-		padding: var(--gl-indent) 0;
-	}
 	//remove this demo style
 	&.demo_mod {
 		@extend %global_flex_block_row_nowrap_center_center;
@@ -27,10 +24,4 @@
 	max-width: $page_width;
 	width: 100%;
 	margin: 0 auto;
-}
-
-.grid_body {
-	display: grid;
-	grid-template-columns: repeat(5, 1fr);
-	gap: 2rem;
 }

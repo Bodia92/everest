@@ -11,6 +11,7 @@ import socialInit from '../components/socialInit';
 import menuHeader from '../components/menuHeader';
 import menuTrigger from '../components/menuTrigger';
 import gridItemInit from '../components/gridItemInit';
+import gridSection from '../components/gridSection';
 
 export default class Layout {
 	constructor() {
@@ -26,6 +27,7 @@ export default class Layout {
 		menuHeader();
 		menuTrigger();
 		gridItemInit();
+		gridSection();
 	}
 
 	init() {
