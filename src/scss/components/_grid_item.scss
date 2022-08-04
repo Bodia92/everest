@@ -1,1 +1,101 @@
 @import "ScssHelpers/helpers_all";
+
+.grid_item {
+}
+//-------------------------grid picture
+.grid_item__image {
+	display: block;
+	width: 215px;
+	height: 220px;
+	flex-shrink: 0;
+}
+
+.grid_item__image_in {
+	display: block;
+}
+.grid_item__image_img {
+	@extend %cover_img;
+}
+
+//-------------------------grid picture###
+
+//-------------------------grid content
+
+.grid_item__content {
+}
+
+.grid_item__tags {
+}
+.grid_item__tag,
+.grid_item__autor,
+.grid_item__text {
+	font-size: 1.2rem;
+	font-weight: 500;
+	line-height: 1.33;
+}
+
+.grid_item__tag {
+}
+
+.grid_item__autor {
+	color: $color_link_base;
+}
+
+.grid_item__text {
+	color: $color_text_base;
+}
+
+.grid_item__icon {
+	display: block;
+	width: 7px;
+	height: 15px;
+}
+
+.grid_item__title {
+	font-size: 1.6rem;
+	font-weight: 500;
+	line-height: 1.31;
+	letter-spacing: -0.02em;
+	color: $color_text_base;
+}
+
+.grid_item__text {
+}
+//-------------------------grid content###
+
+//-------------------------grid info###
+.grid_item__info {
+}
+
+.grid_item__info_data {
+}
+
+.grid_item__info_time {
+}
+
+//-------------------------grid info###
+
+//-------------------------grid video###
+.grid_item__video {
+}
+
+.grid_item__video_text {
+	font-size: 12px;
+	line-height: 1.33;
+	letter-spacing: -0.01em;
+	color: $white;
+}
+
+.grid_item__video_icon {
+	display: block;
+	width: 17px;
+	height: 17px;
+	&--mode {
+		width: 44px;
+		height: 43px;
+		background-color: $white;
+		color: $color_text_base;
+	}
+}
+
+//-------------------------grid video###

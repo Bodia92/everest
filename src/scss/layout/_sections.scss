@@ -6,6 +6,9 @@
 
 	font-size: 1rem;
 
+	&--grid_mode {
+		padding: var(--gl-indent) 0;
+	}
 	//remove this demo style
 	&.demo_mod {
 		@extend %global_flex_block_row_nowrap_center_center;

@@ -4,40 +4,45 @@
 			tag: 'Здравоохранение ',
 			autor: 'Автор: Владимир Мищенко',
 			title: 'Противостояние кибератакам и вирусам с помощью Bitdefender для эффективного администрирования безопасности в медучреждении',
-			text: '1',
+			text: ' Решение дает возможность обеспечить комплексную, надежную защиту ИТ-инфраструктуры и регулирует уровень технических нагрузок с полным охватом разных цифровых систем',
 			background: '1',
-			picture: '1',
+			picture: 'item-4.jpg',
 			data: '1',
 			time: '1',
-			icon: 'light'
-		},
-		{
-			tag: 'Здравоохранение ',
-			autor: 'Автор: Владимир Мищенко',
-			title: 'Противостояние кибератакам и вирусам с помощью Bitdefender для эффективного администрирования безопасности в медучреждении',
-			text: '1',
-			background: '1',
-			picture: '1',
-			data: '1',
-			time: '1',
-			icon: 'light'
+			icon: 'light',
+			video: 'play'
 		}
 	];
 
 mixin grid_item (gridItem)
 	.grid_item
 		if gridItem.picture
-			a.grid_item__image_link(href="#")
+			a.grid_item__image(href="#")
 				+picture({
 					img: `${gridItem.picture}`,
 					class: 'grid_item__image_in',
 					img_class: 'grid_item__image_img',
 					alt: 'item',
 				})
-			.grid_item__content
-				gridItem.picture_tags
-					if gridItem.tag
-						.grid_item__content_tag= gridItem.tag
-					if gridItem.icon
-						span.grid_item__content_icon
-							+icon( `${gridItem.icon}`, 'icon--size_mod')
+		.grid_item__content
+			.grid_item__tags
+				if gridItem.tag
+					span.grid_item__tag= gridItem.tag
+				if gridItem.icon
+					span.grid_item__icon
+						+icon( `${gridItem.icon}`, 'icon--size_mod')
+			if gridItem.autor
+				a.grid_item__autor(href="#")= gridItem.autor
+			if gridItem.title
+				a.grid_item__title(href="#")= gridItem.title
+			if gridItem.text
+				.grid_item__text= gridItem.text
+		if gridItem.data
+			.grid_item__info
+				span.grid_item__info_data= gridItem.data
+				span.grid_item__info_time= gridItem.time
+		if gridItem.video
+			.grid_item__video
+				span.grid_item__video_text Смотреть
+				span.grid_item__video_icon
+						+icon( `${gridItem.video}`, 'icon--size_mod')
