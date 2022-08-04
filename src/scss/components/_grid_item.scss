@@ -4,9 +4,14 @@
 	position: relative;
 	min-height: 22rem;
 	background-color: $color_item_bg;
+
+	&.pos_4_mod {
+		display: flex;
+	}
 }
 //-------------------------grid picture
 .grid_item__image {
+	position: relative;
 	display: block;
 	width: 21.6rem;
 	height: 22rem;
@@ -273,10 +278,15 @@
 	height: 1.8rem;
 	color: $white;
 
-	&--mode {
+	.pos_4_mod & {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 		width: 4.4rem;
 		height: 4.4rem;
 		background-color: $white;
+		border-radius: 50%;
 		color: $color_text_base;
 	}
 }
@@ -285,10 +295,13 @@
 
 //---------------style mod
 .style_1_mod {
-	padding: 1.5rem;
+	padding: 1rem 1.5rem;
 }
 .style_2_mod {
 	padding: 1rem;
+}
+.style_3_mod {
+	padding: 1rem 2rem;
 }
 
 //---------------style mod###
@@ -302,6 +315,7 @@
 
 .pos_2_mod {
 	grid-column: span 2;
+	grid-row: span 1;
 }
 
 .pos_3_mod {
@@ -309,6 +323,8 @@
 }
 
 .pos_4_mod {
+	grid-column: span 2;
+	grid-row: span 1;
 }
 
 //---------------position mod###
