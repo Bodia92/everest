@@ -28,3 +28,9 @@
 	width: 100%;
 	margin: 0 auto;
 }
+
+.grid_body {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 2rem;
+}
