@@ -4,14 +4,34 @@
 	position: relative;
 	min-height: 22rem;
 	background-color: $color_item_bg;
-	display: flex;
-	flex-direction: column;
 
-	&.pos_4_mod {
-		@extend %global_flex_block_row_nowrap_flex-start;
+	&.grid_item--pos_1_mod {
+		grid-column: span 3;
+		grid-row: span 2;
 	}
-	&.pos_3_mod {
+
+	&.grid_item--pos_2_mod {
+		grid-column: span 2;
+		grid-row: span 1;
+	}
+
+	&.grid_item--pos_3_mod {
 		@extend %global_flex_block_column_nowrap_flex-start;
+
+		grid-column: span 1;
+		grid-row: span 2;
+	}
+
+	&.grid_item--pos_4_mod {
+		@extend %global_flex_block_row_nowrap_flex-start;
+
+		grid-column: span 2;
+		grid-row: span 1;
+	}
+
+	&.grid_item--pos_5_mod {
+		grid-column: span 2;
+		grid-row: span 2;
 	}
 }
 
@@ -30,7 +50,6 @@
 .grid_item__image_img {
 	@extend %cover_img;
 }
-
 //-------------------------grid picture###
 
 //-------------------------grid background
@@ -44,28 +63,47 @@
 .grid_item__background_img {
 	@extend %cover_img;
 }
-
 //-------------------------grid background###
 
 //-------------------------grid content
-
 .grid_item__content {
 	position: relative;
 	@extend %global_flex_block_column_nowrap_flex-start;
 	height: 100%;
 
-	.pos_1_mod &,
-	&.style_6_mod {
+	&.grid_item__content--style_1_mod {
+		padding: 1rem 1.5rem;
+	}
+	&.grid_item__content--style_2_mod {
+		padding: 1.5rem;
+	}
+	&.grid_item__content--style_3_mod {
+		padding: 1rem 2rem;
+	}
+	&.grid_item__content--style_4_mod {
+		padding: 1rem 2rem;
+	}
+	&.grid_item__content--style_5_mod {
+		padding: 1rem 2.2rem;
+	}
+	&.grid_item__content--style_6_mod {
+		padding: 1rem 2.2rem;
 		justify-content: flex-end;
 	}
 
-	.pos_2_mod & {
+	.grid_item--pos_1_mod & {
+		justify-content: flex-end;
+	}
+
+	.grid_item--pos_2_mod & {
 		width: 60%;
 		margin-left: auto;
 		flex-shrink: 0;
 		align-items: flex-end;
 	}
 }
+//-------------------------grid content###
+
 //------------------------------grid tags
 .grid_item__tags {
 	@extend %global_flex_block_row_wrap_flex-start;
@@ -76,7 +114,7 @@
 		margin-bottom: 1rem;
 	}
 
-	.pos_2_mod & {
+	.grid_item--pos_2_mod & {
 		display: inline-flex;
 		justify-content: center;
 		flex-wrap: wrap;
@@ -111,18 +149,18 @@
 .grid_item__autor,
 .grid_item__text {
 	font-weight: 500;
-
 	@extend %style_size;
 }
 
 .grid_item__tag {
 	flex-grow: 1;
+
 	&:not(:last-child) {
 		margin: 0 1rem 1rem 0;
 	}
 
-	.pos_1_mod &,
-	.style_6_mod & {
+	.grid_item--pos_1_mod &,
+	.grid_item__content--style_6_mod & {
 		flex-grow: 0;
 		padding: 0.2rem 0.8rem;
 		color: $white;
@@ -136,7 +174,7 @@
 		}
 	}
 
-	.style_3_mod & {
+	.grid_item__content--style_3_mod & {
 		margin-right: 4rem;
 	}
 }
@@ -163,8 +201,6 @@
 	color: $color_tag_mod_7;
 }
 
-//----------------------------grid tags###
-
 .grid_item__autor {
 	display: block;
 	color: $color_link_base;
@@ -173,12 +209,12 @@
 		margin-bottom: 1rem;
 	}
 
-	.pos_1_mod & {
+	.grid_item--pos_1_mod & {
 		width: 100%;
 		color: $white;
 	}
 
-	.pos_2_mod & {
+	.grid_item--pos_2_mod & {
 		padding: 0.2rem 0.8rem;
 		align-self: center;
 		font-size: 1.2rem;
@@ -190,7 +226,7 @@
 			margin-bottom: 1.2rem;
 		}
 	}
-	.style_6_mod & {
+	.grid_item__content--style_6_mod & {
 		color: $white;
 		margin-left: auto;
 	}
@@ -202,13 +238,25 @@
 		margin-bottom: 1rem;
 	}
 
-	.style_6_mod & {
+	.grid_item__content--style_6_mod & {
 		color: $white;
 	}
 }
+//----------------------------grid tags###
+
+.grid__new_icon,
+.grid_item__title {
+	display: block;
+	font-size: 1.6rem;
+	font-weight: 500;
+	line-height: 1.31;
+	letter-spacing: -0.02em;
+	color: $color_text_base;
+}
+
 //-------------------grid icon
 .grid__new_icon {
-	.pos_2_mod & {
+	.grid_item--pos_2_mod & {
 		color: $white;
 		&:not(:last-child) {
 			margin-bottom: 1.2rem;
@@ -222,25 +270,15 @@
 	height: 15px;
 	margin-left: auto;
 }
-
 //-------------------grid icon###
 
-.grid__new_icon,
-.grid_item__title {
-	display: block;
-	font-size: 1.6rem;
-	font-weight: 500;
-	line-height: 1.31;
-	letter-spacing: -0.02em;
-	color: $color_text_base;
-}
 //-------------------grid title
 .grid_item__title {
 	&:not(:last-child) {
 		margin-bottom: 2rem;
 	}
 
-	.pos_1_mod & {
+	.grid_item--pos_1_mod & {
 		color: $white;
 		letter-spacing: normal;
 		text-transform: uppercase;
@@ -254,25 +292,29 @@
 		}
 	}
 
-	.style_4_mod & {
+	.grid_item__content--style_4_mod & {
 		font-size: 2.2rem;
 		line-height: 1.23;
 	}
 
-	.style_5_mod & {
+	.grid_item__content--style_5_mod & {
 		font-size: 3.6rem;
 		line-height: 1;
 		&:not(:last-child) {
 			margin-bottom: 4rem;
 		}
 	}
-	.style_6_mod & {
+	.grid_item__content--style_6_mod & {
 		color: $white;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $color_hover;
+			}
+		}
 	}
 }
 //-------------------grid title###
-
-//-------------------------grid content###
 
 //-------------------------grid info
 .grid_item__info {
@@ -281,8 +323,8 @@
 	width: 100%;
 	@extend %global_flex_block_row_nowrap_flex-start;
 
-	.pos_1_mod &,
-	.style_6_mod & {
+	.grid_item--pos_1_mod &,
+	.grid_item__content--style_6_mod & {
 		margin: 0;
 	}
 }
@@ -291,8 +333,8 @@
 .grid_item__info_time {
 	@extend %style_size;
 
-	.style_1_mod &,
-	.style_6_mod & {
+	.grid_item__content--style_1_mod &,
+	.grid_item__content--style_6_mod & {
 		color: $white;
 	}
 }
@@ -305,7 +347,6 @@
 .grid_item__info_time {
 	margin-left: auto;
 }
-
 //-------------------------grid info###
 
 //-------------------------grid video
@@ -330,7 +371,7 @@
 	height: 1.8rem;
 	color: $white;
 
-	.pos_4_mod & {
+	.grid_item--pos_4_mod & {
 		position: absolute;
 		top: 50%;
 		left: 50%;
@@ -342,55 +383,51 @@
 		color: $color_text_base;
 	}
 }
-
 //-------------------------grid video###
 
 //---------------style mod
-.style_1_mod {
-	padding: 1rem 1.5rem;
-}
-.style_2_mod {
-	padding: 1.5rem;
-}
-.style_3_mod {
-	padding: 1rem 2rem;
-}
-.style_4_mod {
-	padding: 1rem 2rem;
-}
-.style_5_mod {
-	padding: 1rem 2.2rem;
-}
-.style_6_mod {
-	padding: 1rem 2.2rem;
-}
-
+// .grid_item__content--style_1_mod {
+// 	padding: 1rem 1.5rem;
+// }
+// .grid_item__content--style_2_mod {
+// 	padding: 1.5rem;
+// }
+// .grid_item__content--style_3_mod {
+// 	padding: 1rem 2rem;
+// }
+// .grid_item__content--style_4_mod {
+// 	padding: 1rem 2rem;
+// }
+// .grid_item__content--style_5_mod {
+// 	padding: 1rem 2.2rem;
+// }
+// .grid_item__content--style_6_mod {
+// 	padding: 1rem 2.2rem;
+// }
 //---------------style mod###
 
-//---------------position mod
+// //---------------position mod
+// .grid_item--pos_1_mod {
+// 	grid-column: span 3;
+// 	grid-row: span 2;
+// }
 
-.pos_1_mod {
-	grid-column: span 3;
-	grid-row: span 2;
-}
+// .grid_item--pos_2_mod {
+// 	grid-column: span 2;
+// 	grid-row: span 1;
+// }
 
-.pos_2_mod {
-	grid-column: span 2;
-	grid-row: span 1;
-}
+// .grid_item--pos_3_mod {
+// 	grid-column: span 1;
+// 	grid-row: span 2;
+// }
 
-.pos_3_mod {
-	grid-column: span 1;
-	grid-row: span 2;
-}
-
-.pos_4_mod {
-	grid-column: span 2;
-	grid-row: span 1;
-}
-.pos_5_mod {
-	grid-column: span 2;
-	grid-row: span 2;
-}
-
-//---------------position mod###
+// .grid_item--pos_4_mod {
+// 	grid-column: span 2;
+// 	grid-row: span 1;
+// }
+// .grid_item--pos_5_mod {
+// 	grid-column: span 2;
+// 	grid-row: span 2;
+// }
+// //---------------position mod###
