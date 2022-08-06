@@ -1,11 +1,18 @@
 @import "ScssHelpers/helpers_all";
 
 .grid_section {
-	padding: 0 0 var(--gl-indent) 0;
+	padding: var(--gl-indent) 1.5rem;
 }
+
+// .grid_body {
+// 	display: grid;
+// 	grid-template-columns: repeat(5, 1fr);
+// 	gap: 2rem;
+// }
 
 .grid_body {
 	display: grid;
-	grid-template-columns: repeat(5, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	grid-auto-flow: dense;
 	gap: 2rem;
 }
