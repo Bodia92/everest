@@ -32,8 +32,8 @@ mixin grid_item (gridItem)
 				if gridItem.icon
 					span.grid_item__icon
 						+icon( `${gridItem.icon}`, 'icon--size_mod')
-			if gridItem.autor
-				a.grid_item__autor(href="#")= gridItem.autor
+				if gridItem.autor
+					a.grid_item__autor(href="#")= gridItem.autor
 			if gridItem.title
 				a.grid_item__title(href="#")= gridItem.title
 			if gridItem.text

@@ -4,11 +4,17 @@
 	position: relative;
 	min-height: 22rem;
 	background-color: $color_item_bg;
+	display: flex;
+	flex-direction: column;
 
 	&.pos_4_mod {
-		display: flex;
+		@extend %global_flex_block_row_nowrap_flex-start;
+	}
+	&.pos_3_mod {
+		@extend %global_flex_block_column_nowrap_flex-start;
 	}
 }
+
 //-------------------------grid picture
 .grid_item__image {
 	position: relative;
@@ -51,6 +57,7 @@
 	.pos_1_mod & {
 		justify-content: flex-end;
 	}
+
 	.pos_2_mod & {
 		width: 60%;
 		margin-left: auto;
@@ -60,8 +67,10 @@
 }
 //------------------------------grid tags
 .grid_item__tags {
+	@extend %global_flex_block_row_wrap_flex-start;
+
 	width: 100%;
-	@extend %global_flex_block_row_nowrap_flex-start;
+
 	&:not(:last-child) {
 		margin-bottom: 1rem;
 	}
@@ -91,9 +100,6 @@
 	}
 }
 
-.grid_item__tags_subtitle {
-}
-
 .grid_item__tag,
 .grid_item__autor,
 .grid_item__text {
@@ -103,11 +109,13 @@
 }
 
 .grid_item__tag {
+	flex-grow: 1;
 	&:not(:last-child) {
-		margin-right: 1rem;
+		margin: 0 1rem 1rem 0;
 	}
 
 	.pos_1_mod & {
+		flex-grow: 0;
 		padding: 0.2rem 0.8rem;
 		color: $white;
 		background-color: $color_tag_mod_4;
@@ -118,6 +126,10 @@
 				color: $color_hover;
 			}
 		}
+	}
+
+	.style_3_mod & {
+		margin-right: 4rem;
 	}
 }
 
@@ -154,6 +166,7 @@
 	}
 
 	.pos_1_mod & {
+		width: 100%;
 		color: $white;
 	}
 
@@ -193,6 +206,16 @@
 
 //-------------------grid icon###
 
+.grid__new_icon,
+.grid_item__title {
+	display: block;
+	font-size: 1.6rem;
+	font-weight: 500;
+	line-height: 1.31;
+	letter-spacing: -0.02em;
+	color: $color_text_base;
+}
+//-------------------grid title
 .grid_item__title {
 	&:not(:last-child) {
 		margin-bottom: 2rem;
@@ -211,20 +234,25 @@
 			}
 		}
 	}
-}
 
-.grid__new_icon,
-.grid_item__title {
-	display: block;
-	font-size: 1.6rem;
-	font-weight: 500;
-	line-height: 1.31;
-	letter-spacing: -0.02em;
-	color: $color_text_base;
+	.style_4_mod & {
+		font-size: 2.2rem;
+		line-height: 1.23;
+	}
+
+	.style_5_mod & {
+		font-size: 3.6rem;
+		line-height: 1;
+		&:not(:last-child) {
+			margin-bottom: 4rem;
+		}
+	}
 }
+//-------------------grid title###
+
 //-------------------------grid content###
 
-//-------------------------grid info###
+//-------------------------grid info
 .grid_item__info {
 	position: relative;
 	margin-top: auto;
@@ -256,7 +284,7 @@
 
 //-------------------------grid info###
 
-//-------------------------grid video###
+//-------------------------grid video
 .grid_item__video {
 	@extend %global_flex_block_row_nowrap_flex-end;
 }
@@ -303,6 +331,12 @@
 .style_3_mod {
 	padding: 1rem 2rem;
 }
+.style_4_mod {
+	padding: 1rem 2rem;
+}
+.style_5_mod {
+	padding: 1rem 2.2rem;
+}
 
 //---------------style mod###
 
@@ -319,12 +353,17 @@
 }
 
 .pos_3_mod {
+	grid-column: span 1;
 	grid-row: span 2;
 }
 
 .pos_4_mod {
 	grid-column: span 2;
 	grid-row: span 1;
+}
+.pos_5_mod {
+	grid-column: span 2;
+	grid-row: span 2;
 }
 
 //---------------position mod###
