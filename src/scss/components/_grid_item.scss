@@ -403,6 +403,7 @@
 //-------------------------grid video
 .grid_item__video {
 	@extend %global_flex_block_row_nowrap_flex-end;
+	cursor: pointer;
 }
 
 .grid_item__video_text {
