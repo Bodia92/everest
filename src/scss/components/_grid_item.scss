@@ -54,7 +54,8 @@
 	@extend %global_flex_block_column_nowrap_flex-start;
 	height: 100%;
 
-	.pos_1_mod & {
+	.pos_1_mod &,
+	&.style_6_mod {
 		justify-content: flex-end;
 	}
 
@@ -100,6 +101,12 @@
 	}
 }
 
+.grid_item__tags_subtitle {
+	&:not(:last-child) {
+		margin-bottom: 1rem;
+	}
+}
+
 .grid_item__tag,
 .grid_item__autor,
 .grid_item__text {
@@ -114,7 +121,8 @@
 		margin: 0 1rem 1rem 0;
 	}
 
-	.pos_1_mod & {
+	.pos_1_mod &,
+	.style_6_mod & {
 		flex-grow: 0;
 		padding: 0.2rem 0.8rem;
 		color: $white;
@@ -182,10 +190,21 @@
 			margin-bottom: 1.2rem;
 		}
 	}
+	.style_6_mod & {
+		color: $white;
+		margin-left: auto;
+	}
 }
 
 .grid_item__text {
 	color: $color_text_base;
+	&:not(:last-child) {
+		margin-bottom: 1rem;
+	}
+
+	.style_6_mod & {
+		color: $white;
+	}
 }
 //-------------------grid icon
 .grid__new_icon {
@@ -247,6 +266,9 @@
 			margin-bottom: 4rem;
 		}
 	}
+	.style_6_mod & {
+		color: $white;
+	}
 }
 //-------------------grid title###
 
@@ -259,7 +281,8 @@
 	width: 100%;
 	@extend %global_flex_block_row_nowrap_flex-start;
 
-	.pos_1_mod & {
+	.pos_1_mod &,
+	.style_6_mod & {
 		margin: 0;
 	}
 }
@@ -268,7 +291,8 @@
 .grid_item__info_time {
 	@extend %style_size;
 
-	.style_1_mod & {
+	.style_1_mod &,
+	.style_6_mod & {
 		color: $white;
 	}
 }
@@ -326,7 +350,7 @@
 	padding: 1rem 1.5rem;
 }
 .style_2_mod {
-	padding: 1rem;
+	padding: 1.5rem;
 }
 .style_3_mod {
 	padding: 1rem 2rem;
@@ -335,6 +359,9 @@
 	padding: 1rem 2rem;
 }
 .style_5_mod {
+	padding: 1rem 2.2rem;
+}
+.style_6_mod {
 	padding: 1rem 2.2rem;
 }
 
