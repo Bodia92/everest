@@ -22,6 +22,7 @@
 
 .header__social {
 	color: $color_link_base;
+
 	&:not(:last-child) {
 		margin-right: 2.4rem;
 	}
@@ -35,6 +36,7 @@
 	align-self: start;
 	max-width: 16rem;
 	flex-grow: 1;
+
 	&:not(:last-child) {
 		margin-right: 3rem;
 	}
@@ -96,6 +98,7 @@
 
 		@include user_menu_butt_line;
 	}
+
 	&:after {
 		content: "";
 		transform: translate(0, 1rem);
@@ -103,6 +106,7 @@
 
 		@include user_menu_butt_line;
 	}
+
 	&.active_mod {
 		&:before {
 			transform: (rotate(45deg) translate(0, 0));

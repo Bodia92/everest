@@ -16,6 +16,7 @@
 .footer__body {
 	@extend %global_flex_block_row_nowrap_flex-start;
 	margin: -3rem -3rem;
+
 	@include bp($point_2) {
 		flex-wrap: wrap;
 	}
@@ -38,6 +39,7 @@
 			margin-bottom: 14rem;
 		}
 	}
+
 	@include bp($point_3) {
 		&:not(:last-child) {
 			margin-bottom: 4rem;
@@ -158,6 +160,7 @@
 	@extend %global_flex_block_row_wrap_flex-start;
 
 	margin-right: -1.8rem;
+
 	@include bp($point_5) {
 		justify-content: center;
 	}
