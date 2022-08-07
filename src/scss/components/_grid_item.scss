@@ -173,6 +173,8 @@
 	line-height: 1.32;
 	text-transform: uppercase;
 	background-color: $white;
+	user-select: none;
+	pointer-events: none;
 }
 
 .grid_item__tags_title {
@@ -265,6 +267,8 @@
 		line-height: 1.33;
 		color: $white;
 		border: 1px solid $white;
+		user-select: none;
+		pointer-events: none;
 		&:not(:last-child) {
 			margin-bottom: 1.2rem;
 		}
@@ -301,6 +305,8 @@
 .grid__new_icon {
 	.grid_item--pos_2_mod & {
 		color: $white;
+		user-select: none;
+		pointer-events: none;
 		&:not(:last-child) {
 			margin-bottom: 1.2rem;
 		}
@@ -404,6 +410,15 @@
 .grid_item__video {
 	@extend %global_flex_block_row_nowrap_flex-end;
 	cursor: pointer;
+
+	@media (any-hover: hover) {
+		&:hover {
+			.grid_item__video_icon,
+			.grid_item__video_text {
+				color: $color_hover;
+			}
+		}
+	}
 }
 
 .grid_item__video_text {
@@ -411,7 +426,7 @@
 	color: $white;
 
 	@extend %style_size;
-
+	@extend %transition_color;
 	&:not(:last-child) {
 		margin-right: 1rem;
 	}
@@ -422,6 +437,7 @@
 	width: 1.8rem;
 	height: 1.8rem;
 	color: $white;
+	@extend %transition_color;
 
 	.grid_item--pos_4_mod & {
 		position: absolute;
@@ -430,56 +446,18 @@
 		transform: translate(-50%, -50%);
 		width: 4.4rem;
 		height: 4.4rem;
-		background-color: $white;
+		background-color: $color_text_base;
 		border-radius: 50%;
-		color: $color_text_base;
+		color: $white;
+
+		@extend %transition_all;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $color_hover;
+				box-shadow: 0px 0px 3px 3px $color_hover;
+			}
+		}
 	}
 }
 //-------------------------grid video###
-
-//---------------style mod
-// .grid_item__content--style_1_mod {
-// 	padding: 1rem 1.5rem;
-// }
-// .grid_item__content--style_2_mod {
-// 	padding: 1.5rem;
-// }
-// .grid_item__content--style_3_mod {
-// 	padding: 1rem 2rem;
-// }
-// .grid_item__content--style_4_mod {
-// 	padding: 1rem 2rem;
-// }
-// .grid_item__content--style_5_mod {
-// 	padding: 1rem 2.2rem;
-// }
-// .grid_item__content--style_6_mod {
-// 	padding: 1rem 2.2rem;
-// }
-//---------------style mod###
-
-// //---------------position mod
-// .grid_item--pos_1_mod {
-// 	grid-column: span 3;
-// 	grid-row: span 2;
-// }
-
-// .grid_item--pos_2_mod {
-// 	grid-column: span 2;
-// 	grid-row: span 1;
-// }
-
-// .grid_item--pos_3_mod {
-// 	grid-column: span 1;
-// 	grid-row: span 2;
-// }
-
-// .grid_item--pos_4_mod {
-// 	grid-column: span 2;
-// 	grid-row: span 1;
-// }
-// .grid_item--pos_5_mod {
-// 	grid-column: span 2;
-// 	grid-row: span 2;
-// }
-// //---------------position mod###
