@@ -3,7 +3,7 @@ mixin grid_item (gridItem)
 	.grid_item(class=gridItem.pos_mod)
 		if gridItem.background
 			+picture({
-					img: `${gridItem.background}`,
+					img: gridItem.background,
 					class: 'grid_item__background',
 					img_class: 'grid_item__background_img',
 					alt: 'background',
@@ -11,14 +11,14 @@ mixin grid_item (gridItem)
 		if gridItem.picture
 			a.grid_item__image(href="#")
 				+picture({
-					img: `${gridItem.picture}`,
+					img: gridItem.picture,
 					class: 'grid_item__image_in',
 					img_class: 'grid_item__image_img',
 					alt: 'item',
 				})
 				if gridItem.video
-					span.grid_item__video_icon
-						+icon( `${gridItem.video}`, 'icon--size_mod')
+					span.grid_item__btn_icon
+						+icon( gridItem.video, 'icon--size_mod')
 		.grid_item__content(class=gridItem.style_mod)
 			if gridItem.new_icon
 				.grid__new_icon= gridItem.new_icon
@@ -31,7 +31,7 @@ mixin grid_item (gridItem)
 					a.grid_item__tag(class= gridItem.tag_mod href="#")= gridItem.tag
 				if gridItem.icon
 					span.grid_item__icon
-						+icon( `${gridItem.icon}`, 'icon--size_mod')
+						+icon( gridItem.icon, 'icon--size_mod')
 				if gridItem.autor
 					a.grid_item__autor(href="#")= gridItem.autor
 			if gridItem.title
@@ -43,7 +43,7 @@ mixin grid_item (gridItem)
 					span.grid_item__info_data= gridItem.data
 					span.grid_item__info_time= gridItem.time
 			if gridItem.video_icon
-				.grid_item__video
-					span.grid_item__video_text Смотреть
-					span.grid_item__video_icon
-						+icon( `${gridItem.video_icon}`, 'icon--size_mod')
+				buttom.grid_item__btn(type='button')
+					span.grid_item__btn_title Смотреть
+					span.grid_item__btn_icon
+						+icon( gridItem.video_icon, 'icon--size_mod')
