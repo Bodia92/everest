@@ -157,9 +157,9 @@
 //----------------------------------------------footer form
 
 .footer__form {
-	@extend %global_flex_block_row_wrap_flex-start;
+	@extend %global_flex_block_row_wrap_flex-start_center;
 
-	margin-right: -1.8rem;
+	margin: -1.4rem;
 
 	@include bp($point_5) {
 		justify-content: center;
@@ -168,11 +168,15 @@
 
 .form_input {
 	flex-grow: 1;
-	margin-bottom: 2rem;
+	padding: 1.4rem;
 
-	&:not(:last-child) {
-		margin-right: 1.8rem;
-	}
+	// &:not(:last-child) {
+	// 	margin-right: 1.8rem;
+	// }
+}
+
+.footer__form_button {
+	padding: 1.4rem;
 }
 
 .footer__form_btn {

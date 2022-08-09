@@ -2,11 +2,10 @@
 
 .social_list {
 	@extend %global_flex_block_row_wrap_flex-start_center;
+	margin: 0 -1.4rem;
 }
 .social_item {
-	&:not(:last-child) {
-		margin-right: 3rem;
-	}
+	padding: 0 1.4rem;
 }
 
 .social_link {
