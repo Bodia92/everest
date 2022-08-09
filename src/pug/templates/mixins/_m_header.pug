@@ -1,37 +1,38 @@
 mixin header
 	header.header
 		.header_in.section_in
-			a(href="#").header__logo
-				img(src="images/header_logo.png", class="header__logo_img" alt="logo")
-			nav.header__menu
-				+menu({
-					gl_class: 'header__menu',
-					items: [
-						{title: 'О нас', url: '#', active: true},
-						{title: 'Решения', url: '#', active: false},
-						{title: 'Аналитика', url: '#', active: false},
-						{title: 'Партнеры', url: '#', active: false},
-						{title: 'Контакты', url: '#', active: false},
-						{title: 'Подписка', url: '#', active: false}
-					]
-				})
-				+social({
-					mod_block: 'header__social',
-					items: [
-						{name_icon: 'facebook', mod_link: 'social_link--size_1_mod', mod_icon:'icon--size_mod'},
-						{name_icon: 'twitter', mod_link: 'social_link--size_2_mod', mod_icon:'icon--size_mod'},
-						{name_icon: 'rss', mod_link: 'social_link--size_3_mod', mod_icon:'icon--size_mod'},
-						{name_icon: 'youtube', mod_link: 'social_link--size_4_mod', mod_icon:'icon--size_mod'}
-					]
-				})
-				a(href='#').header__search
-					+icon('search', 'icon--size_mod')
-				+lang({
-					mod_lang: 'header__lang',
-					items:[
-						{name: 'Ua'},
-						{name: 'Ru'}
-					]
-				})
-			.header__menu_trigger.menuTrigger
-				span.header__menu_trigger_decor
+			.header__body
+				a(href="#").header__logo
+					img(src="images/header_logo.png", class="header__logo_img" alt="logo")
+				nav.header__menu
+					+menu({
+						gl_class: 'header__menu',
+						items: [
+							{title: 'О нас', url: '#', active: true},
+							{title: 'Решения', url: '#', active: false},
+							{title: 'Аналитика', url: '#', active: false},
+							{title: 'Партнеры', url: '#', active: false},
+							{title: 'Контакты', url: '#', active: false},
+							{title: 'Подписка', url: '#', active: false}
+						]
+					})
+					+social({
+						mod_block: 'header__social',
+						items: [
+							{name_icon: 'facebook', mod_link: 'social_link--size_1_mod', mod_icon:'icon--size_mod'},
+							{name_icon: 'twitter', mod_link: 'social_link--size_2_mod', mod_icon:'icon--size_mod'},
+							{name_icon: 'rss', mod_link: 'social_link--size_3_mod', mod_icon:'icon--size_mod'},
+							{name_icon: 'youtube', mod_link: 'social_link--size_4_mod', mod_icon:'icon--size_mod'}
+						]
+					})
+					a(href='#').header__search
+						+icon('search', 'icon--size_mod')
+					+lang({
+						mod_lang: 'header__lang',
+						items:[
+							{name: 'Ua'},
+							{name: 'Ru'}
+						]
+					})
+				.header__menu_trigger.menuTrigger
+					span.header__menu_trigger_decor

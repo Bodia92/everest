@@ -3,6 +3,7 @@
 //---------------------------------------------menu
 .header__menu {
 	@extend %global_flex_block_row_wrap_flex-start_center;
+	padding: 0 1rem;
 
 	@extend %transition_transform;
 
