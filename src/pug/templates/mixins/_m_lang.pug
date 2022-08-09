@@ -1,6 +1,6 @@
 mixin lang(langArray)
 	- mod_lang = langArray.mod_lang || ''
-	ul.lang__list(class= `${mod_lang}`)
+	ul.lang_list(class= `${mod_lang}`)
 		each item in langArray.items
-			li.lang__item
-				a(href='#').lang__link= item.name
+			li.lang_list__item
+				a(href='#').lang_list__link= item.name

@@ -1,9 +1,9 @@
 @import "ScssHelpers/helpers_all";
 
-.lang__list {
+.lang_list {
 	@extend %global_flex_block_row_wrap_flex-start_center;
 }
-.lang__item {
+.lang_list__item {
 	position: relative;
 
 	&:not(:last-child) {
@@ -22,7 +22,7 @@
 	}
 }
 
-.lang__link {
+.lang_list__link {
 	display: block;
 
 	font-size: 1.6rem;
