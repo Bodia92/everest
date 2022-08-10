@@ -22,11 +22,9 @@ mixin grid_item (gridItem)
 		.grid_item__content(class=gridItem.style_mod)
 			if gridItem.new_icon
 				.grid__new_icon= gridItem.new_icon
+			if gridItem.content_title
+				h3.grid_item__content_title!= gridItem.content_title
 			.grid_item__tags
-				if gridItem.tag_title
-					span.grid_item__tags_title= gridItem.tag_name
-					span.grid_item__tags_title= gridItem.tag_title
-					span.grid_item__tags_subtitle= gridItem.tag_subtitle
 				if gridItem.tag
 					.grid_item__tag
 						a.grid_item__tag_link(class= gridItem.tag_mod href="#")= gridItem.tag

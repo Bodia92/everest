@@ -14,21 +14,11 @@
 			grid-column: span 2;
 			grid-row: span 1;
 		}
-
-		@include bp($point_6 - 1) {
-			grid-column: span 1;
-			grid-row: span 1;
-		}
 	}
 
 	&.grid_item--pos_2_mod {
 		@include bp($point_6, min) {
 			grid-column: span 2;
-			grid-row: span 1;
-		}
-
-		@include bp($point_6 -1) {
-			grid-column: span 1;
 			grid-row: span 1;
 		}
 	}
@@ -39,11 +29,6 @@
 		@include bp($point_6, min) {
 			grid-column: span 1;
 			grid-row: span 2;
-		}
-
-		@include bp($point_6 - 1) {
-			grid-column: span 1;
-			grid-row: span 1;
 		}
 	}
 
@@ -57,9 +42,6 @@
 
 		@include bp($point_6 - 1) {
 			flex-direction: column;
-
-			grid-column: span 1;
-			grid-row: span 1;
 		}
 	}
 
@@ -68,7 +50,13 @@
 			grid-column: span 2;
 			grid-row: span 2;
 		}
+	}
 
+	&.grid_item--pos_1_mod,
+	&.grid_item--pos_2_mod,
+	&.grid_item--pos_3_mod,
+	&.grid_item--pos_4_mod,
+	&.grid_item--pos_5_mod {
 		@include bp($point_6 - 1) {
 			grid-column: span 1;
 			grid-row: span 1;
@@ -148,13 +136,13 @@
 	}
 
 	.grid_item--pos_2_mod & {
-		width: 60%;
+		width: 50%;
 		margin-left: auto;
 		flex-shrink: 0;
 		align-items: flex-end;
 
 		@include bp($point_5 - 1) {
-			width: 80%;
+			width: 70%;
 		}
 	}
 }
@@ -179,46 +167,6 @@
 	.grid_item__content--style_5_mod &,
 	.grid_item__content--style_6_mod & {
 		@extend %global_flex_block_row_wrap_flex-start_center;
-	}
-}
-
-.grid_item__tags_title,
-.grid_item__tags_subtitle {
-	text-align: center;
-	padding: 0.6rem 0.4rem;
-	font-size: 2.6rem;
-	font-weight: 700;
-	line-height: 1.32;
-	text-transform: uppercase;
-	background-color: $white;
-	user-select: none;
-	pointer-events: none;
-
-	@include bp($point_4 - 1) {
-		font-size: 2rem;
-	}
-
-	@include bp($point_5 - 1) {
-		font-size: 1.6rem;
-	}
-}
-
-.grid_item__tags_title {
-	color: $color_footer_bg;
-	&:not(:last-child) {
-		margin-bottom: 0.8rem;
-	}
-}
-
-.grid_item__tags_subtitle {
-	&:not(:last-child) {
-		margin-bottom: 1rem;
-	}
-
-	@include bp($point_4 - 1) {
-		&:not(:last-child) {
-			margin-right: 1rem;
-		}
 	}
 }
 
@@ -298,6 +246,7 @@
 		line-height: 1.33;
 		color: $white;
 		border: 1px solid $white;
+		white-space: nowrap;
 		user-select: none;
 		pointer-events: none;
 		&:not(:last-child) {
@@ -353,6 +302,41 @@
 //-------------------grid icon###
 
 //-------------------grid title
+
+.grid_item__content_title {
+	text-align: center;
+	font-size: 2.6rem;
+	font-weight: 700;
+	line-height: 1.32;
+	text-transform: uppercase;
+
+	user-select: none;
+	pointer-events: none;
+	&:not(:last-child) {
+		margin-bottom: 1.2rem;
+	}
+
+	&::after {
+		content: "";
+	}
+	span {
+		background-color: $white;
+	}
+
+	strong {
+		color: $color_footer_bg;
+		background-color: $white;
+	}
+
+	@include bp($point_4 - 1) {
+		font-size: 2rem;
+	}
+
+	@include bp($point_5 - 1) {
+		font-size: 1.6rem;
+	}
+}
+
 .grid_item__title {
 	&:not(:last-child) {
 		margin-bottom: 2rem;
