@@ -1,4 +1,4 @@
-import 'ScssComponents/_lang.scss';
+import 'ScssComponents/_lang_list.scss';
 
 const langInit = () => {
 };

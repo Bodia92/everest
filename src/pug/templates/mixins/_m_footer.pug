@@ -5,20 +5,21 @@ mixin footer
 				.footer__column
 					a(href="#").footer__logo
 						img(src="images/footer_logo.png", class="footer__logo_img" alt="logo")
-					h3.footer__title Платформа AI
-					+social({
-						mod_block: 'footer__social',
-						items: [
-							{name_icon: 'facebook', mod_link: 'social_link--size_1_mod', mod_icon:'icon--size_mod'},
-							{name_icon: 'twitter', mod_link: 'social_link--size_2_mod', mod_icon:'icon--size_mod'},
-							{name_icon: 'rss', mod_link: 'social_link--size_3_mod', mod_icon:'icon--size_mod'},
-							{name_icon: 'youtube', mod_link: 'social_link--size_4_mod', mod_icon:'icon--size_mod'}
-						]
-					})
-					.footer__copyright
-						span.footer__copyright_icon ©
-						span.footer__copyright_text 2020 Everest.
-						span.footer__copyright_text ALL RIGHTS RESERVED
+					.footer__column_body
+						h3.footer__title Платформа AI
+						+social({
+							mod_block: 'footer__social',
+							items: [
+								{name_icon: 'facebook', mod_link: 'social_link--size_1_mod', mod_icon:'icon--size_mod'},
+								{name_icon: 'twitter', mod_link: 'social_link--size_2_mod', mod_icon:'icon--size_mod'},
+								{name_icon: 'rss', mod_link: 'social_link--size_3_mod', mod_icon:'icon--size_mod'},
+								{name_icon: 'youtube', mod_link: 'social_link--size_4_mod', mod_icon:'icon--size_mod'}
+							]
+						})
+						.footer__copyright
+							span.footer__copyright_icon ©
+							span.footer__copyright_text 2020 Everest.
+							span.footer__copyright_text ALL RIGHTS RESERVED
 				.footer__column
 					+menu({
 							gl_class: 'footer__menu',
@@ -50,9 +51,10 @@ mixin footer
 						})
 				.footer__column.footer__column--mod_width
 					h3.footer__title О нас
-					p.footer__text EVEREST - опытный интегратор digital-технологий, продуктов и сервисов для цифровой трансформации бизнеса, корпоративного и государственного секторов.
-					p.footer__text Разрабатывает и внедряет решения на базе AI, используя методы Data Data и ML для совершенствования и автоматизации бизнес-процессов клиентов.
-					p.footer__text Всегда оперирует тенденциями цифрового мира и концентрирует свои усилия на уникальности и инновационности методов в работе с каждым клиентом над созданием и адаптацией digital-идей и концепций.
+					.footer__text
+						p EVEREST - опытный интегратор digital-технологий, продуктов и сервисов для цифровой трансформации бизнеса, корпоративного и государственного секторов.
+						p Разрабатывает и внедряет решения на базе AI, используя методы Data Data и ML для совершенствования и автоматизации бизнес-процессов клиентов.
+						p Всегда оперирует тенденциями цифрового мира и концентрирует свои усилия на уникальности и инновационности методов в работе с каждым клиентом над созданием и адаптацией digital-идей и концепций.
 					form.footer__form
 						+form_input({
 							type: 'email',
@@ -63,3 +65,17 @@ mixin footer
 						})
 						.footer__form_button
 							button.footer__form_btn(type="submit") Подписаться
+				.footer__column_body.footer__column_body--mod_mobile
+						+social({
+							mod_block: 'footer__social',
+							items: [
+								{name_icon: 'facebook', mod_link: 'social_link--size_1_mod', mod_icon:'icon--size_mod'},
+								{name_icon: 'twitter', mod_link: 'social_link--size_2_mod', mod_icon:'icon--size_mod'},
+								{name_icon: 'rss', mod_link: 'social_link--size_3_mod', mod_icon:'icon--size_mod'},
+								{name_icon: 'youtube', mod_link: 'social_link--size_4_mod', mod_icon:'icon--size_mod'}
+							]
+						})
+						.footer__copyright
+							span.footer__copyright_icon ©
+							span.footer__copyright_text 2020 Everest.
+							span.footer__copyright_text ALL RIGHTS RESERVED

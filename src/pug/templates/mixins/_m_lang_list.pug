@@ -1,4 +1,4 @@
-mixin lang(langArray)
+mixin lang_list(langArray)
 	- mod_lang = langArray.mod_lang || ''
 	ul.lang_list(class= `${mod_lang}`)
 		each item in langArray.items

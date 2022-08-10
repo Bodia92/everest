@@ -43,7 +43,7 @@ mixin grid_item (gridItem)
 					span.grid_item__info_data= gridItem.data
 					span.grid_item__info_time= gridItem.time
 			if gridItem.video_icon
-				buttom.grid_item__btn(type='button')
+				button.grid_item__btn(type='button' aria-label='play video')
 					span.grid_item__btn_title Смотреть
 					span.grid_item__btn_icon
 						+icon( gridItem.video_icon, 'icon--size_mod')

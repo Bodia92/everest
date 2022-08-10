@@ -5,9 +5,12 @@
 }
 .lang_list__item {
 	position: relative;
+	&:not(:last-child) {
+		margin-right: 0.6rem;
+	}
 
 	&:not(:last-child) {
-		padding-right: 1rem;
+		padding-right: 0.6rem;
 
 		&::after {
 			content: "";
@@ -16,7 +19,7 @@
 			height: 1.6rem;
 			top: 50%;
 			right: 0;
-			transform: translate(-5px, -50%);
+			margin: -0.8rem 0 0 -0.5rem;
 			background-color: $color_link_base;
 		}
 	}

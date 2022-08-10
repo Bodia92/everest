@@ -21,7 +21,6 @@
 .header__body {
 	@extend %global_flex_block_row_nowrap_flex-start_center;
 	padding: 1.6rem 0;
-	margin: 0 -1rem;
 }
 .header__social {
 	color: $color_link_base;
@@ -36,11 +35,9 @@
 //---------------------------------------------logo
 
 .header__logo {
-	flex-grow: 0;
-	align-self: start;
+	flex-shrink: 0;
 	width: 16rem;
 	height: 5.4rem;
-	padding: 0 1rem;
 	margin-right: auto;
 }
 

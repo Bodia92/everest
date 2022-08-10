@@ -108,7 +108,7 @@
 //-------------------------grid content
 .grid_item__content {
 	position: relative;
-	@extend %global_flex_block_column_nowrap_flex-start;
+	@extend %global_flex_block_column_nowrap_flex-start_center;
 	height: 100%;
 
 	&.grid_item__content--style_1_mod {
@@ -139,7 +139,6 @@
 		width: 60%;
 		margin-left: auto;
 		flex-shrink: 0;
-		align-items: flex-end;
 
 		@include bp($point_5 - 1) {
 			width: 80%;
@@ -150,6 +149,7 @@
 
 //------------------------------grid tags
 .grid_item__tags {
+	@extend %global_flex_block_row_wrap_flex-start_center;
 	margin: -1.2rem 0;
 	width: 100%;
 
@@ -165,12 +165,6 @@
 		&:not(:last-child) {
 			margin-bottom: 1rem;
 		}
-	}
-
-	.grid_item--pos_4_mod &,
-	.grid_item__content--style_5_mod &,
-	.grid_item__content--style_6_mod & {
-		@extend %global_flex_block_row_wrap_flex-start_center;
 	}
 }
 
@@ -244,7 +238,6 @@
 
 	.grid_item--pos_2_mod & {
 		padding: 0.2rem 0.8rem;
-		align-self: center;
 		font-size: 1.2rem;
 		font-weight: 500;
 		line-height: 1.33;
@@ -288,6 +281,7 @@
 //-------------------grid icon
 .grid__new_icon {
 	.grid_item--pos_2_mod & {
+		align-self: flex-end;
 		color: $white;
 		user-select: none;
 		pointer-events: none;
@@ -308,9 +302,10 @@
 //-------------------grid title
 
 .grid_item__content_title {
+	@extend %global_flex_block_column_nowrap_flex-start_center;
+
 	text-align: center;
 	font-size: 2.6rem;
-	font-weight: 700;
 	line-height: 1.32;
 	text-transform: uppercase;
 
@@ -320,16 +315,15 @@
 		margin-bottom: 1.2rem;
 	}
 
-	&::after {
-		content: "";
-	}
 	span {
 		background-color: $white;
 	}
 
 	strong {
 		color: $color_footer_bg;
+		font-weight: 700;
 		background-color: $white;
+		margin-bottom: 0.6rem;
 	}
 
 	@include bp($point_4 - 1) {
@@ -427,6 +421,7 @@
 
 //-------------------------grid btn
 .grid_item__btn {
+	align-self: flex-end;
 	@extend %global_flex_block_row_nowrap_flex-end_center;
 	padding: 0.4rem;
 

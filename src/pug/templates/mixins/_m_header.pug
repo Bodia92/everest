@@ -27,12 +27,12 @@ mixin header
 					})
 					a(href='#').header__search
 						+icon('search', 'icon--size_mod')
-					+lang({
+					+lang_list({
 						mod_lang: 'header__lang',
 						items:[
 							{name: 'Ua'},
 							{name: 'Ru'}
 						]
 					})
-				.header__menu_trigger.menuTrigger
+				button(type='button' aria-label='open/hide menu').header__menu_trigger.menuTrigger
 					span.header__menu_trigger_decor
