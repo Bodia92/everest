@@ -7,11 +7,8 @@ import { documentReady, pageLoad, onWindowResize } from 'utils';
 import { calcViewportHeight } from '../utils';
 // ------------------  import components###
 import langInit from '../components/langInit';
-import socialInit from '../components/socialInit';
 import menuHeader from '../components/menuHeader';
 import menuTrigger from '../components/menuTrigger';
-import gridItemInit from '../components/gridItemInit';
-import gridSection from '../components/gridSection';
 
 export default class Layout {
 	constructor() {
@@ -23,11 +20,8 @@ export default class Layout {
 		console.log('layout load');
 		calcViewportHeight();
 		langInit();
-		socialInit();
 		menuHeader();
 		menuTrigger();
-		gridItemInit();
-		gridSection();
 	}
 
 	init() {
