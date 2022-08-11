@@ -1,7 +1,7 @@
 @import "ScssHelpers/helpers_all";
 
 .social_list {
-	@extend %global_flex_block_row_wrap_center_stretch;
+	@extend %global_flex_block_row_wrap_center_center;
 	margin: 0 -1.4rem;
 }
 .social_item {

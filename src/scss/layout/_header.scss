@@ -39,6 +39,7 @@
 	width: 16rem;
 	height: 5.4rem;
 	margin-right: auto;
+	z-index: 100;
 }
 
 .header__logo_img {
@@ -87,7 +88,7 @@
 	color: transparent;
 	cursor: pointer;
 
-	@include bp($point_3) {
+	@include bp($point_1) {
 		display: block; // appear on tablets
 	}
 

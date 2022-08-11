@@ -3,17 +3,16 @@
 //---------------------------------------------menu
 .header__menu {
 	@extend %global_flex_block_row_wrap_flex-start_center;
-	// padding: 0 1rem;
-	padding: var(--height-header) var(--gl-indent);
+	padding: 0 1rem;
 
 	@extend %transition_transform;
 
-	@include bp($point_3) {
+	@include bp($point_1) {
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: 100%;
-		height: var(--full-screen);
+		width: 40%;
+		height: auto;
 		overflow-x: hidden;
 		overflow-y: auto;
 
@@ -24,7 +23,7 @@
 		background: lightgoldenrodyellow;
 		transform: translate(-100%, 0);
 
-		body.body--open_menu_state & {
+		.body--open_menu_state & {
 			transform: translate(0, 0);
 		}
 	}
@@ -33,29 +32,34 @@
 .header__menu_list {
 	@extend %global_flex_block_row_wrap_flex-start_center;
 
-	@include bp($point_2, min) {
+	@include bp($point_1, min) {
 		&:not(:last-child) {
 			margin-right: 3rem;
 		}
 	}
 
-	@include bp($point_3) {
+	@include bp($point_1) {
 		width: 100%;
 		flex: 0 0 auto;
 		flex-direction: column;
 		justify-content: center;
-		margin: auto;
+		align-items: flex-start;
+		margin: 0;
+		padding-top: 5rem;
+		&:not(:last-child) {
+			margin-bottom: 1.6rem;
+		}
 	}
 }
 
 .header__menu_item {
-	@include bp($point_2, min) {
+	@include bp($point_1, min) {
 		&:not(:last-child) {
 			margin-right: var(--gl-indent);
 		}
 	}
 
-	@include bp($point_3) {
+	@include bp($point_1) {
 		&:not(:last-child) {
 			margin-bottom: var(--gl-indent);
 		}
@@ -74,7 +78,7 @@
 		color: $color_tag_mod_1;
 	}
 
-	@include bp($point_3) {
+	@include bp($point_1) {
 		font-size: 2rem;
 	}
 }
