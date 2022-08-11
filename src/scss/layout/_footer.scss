@@ -2,7 +2,7 @@
 	width: 100%;
 	min-height: var(--height-footer);
 	flex: 0 0 auto;
-	padding: var(--gl-indent);
+	padding: var(--gl-indent) 1.5rem;
 
 	font-size: 1rem;
 	color: $white;
@@ -11,11 +11,9 @@
 	will-change: transform;
 }
 
-.footer__in {
-}
 .footer__body {
-	@extend %global_flex_block_row_wrap_flex-start_stretch;
-	margin: 0 -3rem -1.2rem 0;
+	@include flex_block(row, wrap, flex-start, stretch);
+	margin: 0 -1.5rem;
 
 	@include bp($point_4) {
 		margin: 0;
@@ -26,19 +24,29 @@
 	@extend %global_flex_block_column_nowrap_flex-start_stretch;
 	padding: 0 1.5rem;
 
+	@include bp($point_4) {
+		padding: 0;
+	}
+
 	&:not(:last-child) {
-		margin-bottom: 1.2rem;
+		margin-bottom: 1.6rem;
 	}
 
 	@include bp($point_2, min) {
 		width: 20%;
 	}
-	@include bp($point_3, $point_4) {
+	@include bp($point_3) {
 		width: 50%;
 	}
 	@include bp($point_4 - 1) {
 		padding: 0;
 		width: 100%;
+	}
+
+	&.footer__column--mod_logo {
+		@include bp($point_3) {
+			width: 100%;
+		}
 	}
 
 	&.footer__column--mod_width {
@@ -55,17 +63,17 @@
 	@include bp($point_2, min) {
 	}
 	@include bp($point_3) {
+		display: none;
 	}
 	@include bp($point_4 - 1) {
-		display: none;
 	}
 }
 
 .footer__column_body--mod_mobile {
 	display: none;
 
-	@include bp($point_4 - 1) {
-		@include flex_block(column, nowrap, center, center);
+	@include bp($point_3) {
+		@include flex_block(row, wrap, center, center);
 		width: 100%;
 	}
 }
@@ -78,13 +86,11 @@
 	max-width: 16rem;
 	margin-bottom: auto;
 
-	@include bp($point_2, min) {
-		&:not(:last-child) {
-		}
-	}
-
 	@include bp($point_3) {
 		margin: 0 auto;
+		&:not(:last-child) {
+			margin-bottom: 1.6rem;
+		}
 	}
 	@include bp($point_5) {
 		justify-content: center;
@@ -125,6 +131,18 @@
 	&:not(:last-child) {
 		margin-bottom: 1.8rem;
 	}
+
+	.footer__column_body--mod_mobile & {
+		margin: 0;
+		margin-right: auto;
+
+		@include bp($point_6) {
+			margin-right: 0;
+			&:not(:last-child) {
+				margin-bottom: 1.2rem;
+			}
+		}
+	}
 }
 
 .footer__text {
@@ -143,6 +161,7 @@
 //----------------------------------------------copyright
 
 .footer__copyright {
+	padding: 0 1.5rem;
 	display: grid;
 	grid-template-columns: 3rem 1fr;
 }

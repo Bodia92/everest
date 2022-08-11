@@ -3,7 +3,8 @@
 //---------------------------------------------menu
 .header__menu {
 	@extend %global_flex_block_row_wrap_flex-start_center;
-	padding: 0 1rem;
+	// padding: 0 1rem;
+	padding: var(--height-header) var(--gl-indent);
 
 	@extend %transition_transform;
 
@@ -43,7 +44,6 @@
 		flex: 0 0 auto;
 		flex-direction: column;
 		justify-content: center;
-		padding: var(--height-header) var(--gl-indent);
 		margin: auto;
 	}
 }
@@ -56,7 +56,9 @@
 	}
 
 	@include bp($point_3) {
-		margin-bottom: var(--gl-indent);
+		&:not(:last-child) {
+			margin-bottom: var(--gl-indent);
+		}
 		flex: 0 0 auto;
 	}
 }
