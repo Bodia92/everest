@@ -23,10 +23,8 @@ body {
 	position: relative;
 
 	display: flex;
-	flex-direction: column;
+	// flex-direction: column;
 	height: 100%;
-	overflow-x: hidden;
-	overflow-y: auto;
 
 	font-size: $font_size_base;
 	color: $color_text_base;
@@ -41,7 +39,7 @@ body {
 		display: block;
 	}
 
-	body.body--open_menu_state {
+	&.body--open_menu_state {
 		overflow: hidden;
 		@extend %transition_transform;
 	}
