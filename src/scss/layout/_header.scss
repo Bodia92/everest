@@ -186,7 +186,7 @@
 		@include user_menu_butt_line;
 	}
 
-	&.menu_trigger--active_mod {
+	&.menuTrigger--active_mod {
 		&:before {
 			transform: (rotate(45deg) translate(0, 0));
 		}
@@ -200,7 +200,7 @@
 .header__menu_trigger_decor {
 	@extend %transition_all;
 
-	.menu_trigger--active_mod & {
+	.menuTrigger--active_mod & {
 		opacity: 0;
 		transform: translate(0, 100%);
 	}
