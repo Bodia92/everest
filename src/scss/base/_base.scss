@@ -23,7 +23,6 @@ body {
 	position: relative;
 
 	display: flex;
-	// flex-direction: column;
 	height: 100%;
 
 	font-size: $font_size_base;
@@ -40,8 +39,10 @@ body {
 	}
 
 	&.body--open_menu_state {
-		overflow: hidden;
 		@extend %transition_transform;
+		@include bp($point_5) {
+			overflow: hidden;
+		}
 	}
 }
 

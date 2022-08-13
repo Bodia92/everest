@@ -4,7 +4,7 @@ const menuTrigger = () => {
 
 	function addClass(target) {
 		if (target.closest('.header__body')) {
-			planItem.classList.add('active_mod');
+			planItem.classList.add('menuTrigger--active_mod');
 			cardBody.classList.add('body--open_menu_state');
 		}
 	}
@@ -12,7 +12,7 @@ const menuTrigger = () => {
 		const targetElement = e.target;
 		if (cardBody.classList.contains('body--open_menu_state') && targetElement.closest('.menuTrigger')) {
 			cardBody.classList.remove('body--open_menu_state');
-			planItem.classList.remove('active_mod');
+			planItem.classList.remove('.menuTrigger--active_mod');
 		} else {
 			addClass(targetElement);
 		}

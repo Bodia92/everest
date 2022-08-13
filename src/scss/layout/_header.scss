@@ -1,6 +1,6 @@
 //---------------------------------------------layout
 .header {
-	position: fixed;
+	position: relative;
 	top: 0;
 	left: 0;
 
@@ -14,6 +14,29 @@
 	will-change: transform;
 
 	@include z-index(header);
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 30%;
+		height: 7rem;
+		background-color: lightgoldenrodyellow;
+
+		@extend %transition_transform;
+
+		transform: translate(0, -100%);
+		z-index: 100;
+
+		.body--open_menu_state & {
+			transform: translate(0, 0);
+		}
+
+		@include bp($point_5) {
+			width: 100%;
+		}
+	}
 }
 
 .header_in {
@@ -23,12 +46,22 @@
 	@extend %global_flex_block_row_nowrap_flex-start_center;
 	padding: 1.6rem 0;
 }
+
+.header__social_wrapper {
+	@include bp($point_1, min) {
+		&:not(:last-child) {
+			margin-right: 1.8rem;
+		}
+	}
+	@include bp($point_1) {
+		&:not(:last-child) {
+			margin-bottom: 1.8rem;
+		}
+	}
+}
+
 .header__social {
 	color: $color_link_base;
-
-	&:not(:last-child) {
-		margin-right: 2.4rem;
-	}
 }
 
 //---------------------------------------------layout###
@@ -40,7 +73,7 @@
 	width: 16rem;
 	height: 5.4rem;
 	margin-right: auto;
-	z-index: 100;
+	z-index: 101;
 	@include bp($point_1) {
 		margin-left: auto;
 	}
@@ -52,19 +85,60 @@
 
 //---------------------------------------------logo###
 
-//---------------------------------------------header search
-.header__search {
+//---------------------------------------------header form
+.header_form {
+	position: relative;
+
+	@extend %global_flex_block_row_nowrap_center_center;
+
+	@include bp($point_1, min) {
+		&:not(:last-child) {
+			margin-right: 1.8rem;
+		}
+	}
+	@include bp($point_1) {
+		&:not(:last-child) {
+			margin-bottom: 1.8rem;
+		}
+	}
+}
+
+.header_form__input {
+	display: none;
+
+	@include bp($point_1) {
+		display: block;
+		width: 100%;
+		padding: 0;
+	}
+}
+
+.header_form_element {
+	padding-left: 4.2rem;
+	color: $color_text_base;
+	background-color: $white;
+	box-shadow: inset 0 0 0 1px $color_link_base;
+	@extend %form_el_default;
+}
+
+.header_form__search {
 	flex-shrink: 0;
 	width: 1.8rem;
 	height: 1.8rem;
 
 	color: $color_link_base;
 
-	&:not(:last-child) {
-		margin-right: 1.8rem;
+	@include bp($point_1) {
+		position: absolute;
+		top: 50%;
+		left: 1rem;
+		height: 100%;
+		width: 3rem;
+		padding: 0 0.6rem;
+		transform: translate(0, -50%);
 	}
 }
-//---------------------------------------------header search###
+//---------------------------------------------header form###
 
 //---------------------------------------------trigger
 @mixin user_menu_butt_line {
@@ -112,7 +186,7 @@
 		@include user_menu_butt_line;
 	}
 
-	&.active_mod {
+	&.menu_trigger--active_mod {
 		&:before {
 			transform: (rotate(45deg) translate(0, 0));
 		}
@@ -126,7 +200,7 @@
 .header__menu_trigger_decor {
 	@extend %transition_all;
 
-	.active_mod & {
+	.menu_trigger--active_mod & {
 		opacity: 0;
 		transform: translate(0, 100%);
 	}

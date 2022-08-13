@@ -6,35 +6,49 @@ mixin header
 			.header__body
 				a(href="#").header__logo
 					img(src="images/header_logo.png", class="header__logo_img" alt="logo")
-				nav.header__menu
-					+menu({
-						gl_class: 'header__menu',
-						items: [
-							{title: 'О нас', url: '#', active: true},
-							{title: 'Решения', url: '#', active: false},
-							{title: 'Аналитика', url: '#', active: false},
-							{title: 'Партнеры', url: '#', active: false},
-							{title: 'Контакты', url: '#', active: false},
-							{title: 'Подписка', url: '#', active: false}
-						]
-					})
-					+social({
-						mod_block: 'header__social',
-						items: [
-							{name_icon: 'facebook', mod_link: 'social_link--size_1_mod', mod_icon:'icon--size_mod'},
-							{name_icon: 'twitter', mod_link: 'social_link--size_2_mod', mod_icon:'icon--size_mod'},
-							{name_icon: 'rss', mod_link: 'social_link--size_3_mod', mod_icon:'icon--size_mod'},
-							{name_icon: 'youtube', mod_link: 'social_link--size_4_mod', mod_icon:'icon--size_mod'}
-						]
-					})
-					a(href='#').header__search
-						+icon('search', 'icon--size_mod')
-					+lang_list({
-						mod_lang: 'header__lang',
-						items:[
-							{name: 'Ua'},
-							{name: 'Ru'}
-						]
-					})
+				.header__menu_wrapper
+					nav.header__menu
+						+menu({
+							gl_class: 'header__menu',
+							items: [
+								{title: 'О нас', url: '#', active: true},
+								{title: 'Решения', url: '#', active: false},
+								{title: 'Аналитика', url: '#', active: false},
+								{title: 'Партнеры', url: '#', active: false},
+								{title: 'Контакты', url: '#', active: false},
+								{title: 'Подписка', url: '#', active: false}
+							]
+						})
+						.header__social_wrapper
+							+social({
+								mod_block: 'header__social',
+								items: [
+									{name_icon: 'facebook', mod_link: 'social_link--size_1_mod', mod_icon:'icon--size_mod'},
+									{name_icon: 'twitter', mod_link: 'social_link--size_2_mod', mod_icon:'icon--size_mod'},
+									{name_icon: 'rss', mod_link: 'social_link--size_3_mod', mod_icon:'icon--size_mod'},
+									{name_icon: 'youtube', mod_link: 'social_link--size_4_mod', mod_icon:'icon--size_mod'}
+								]
+							})
+						form.header_form
+							+form_input({
+								label_class: 'header_form__label',
+								class: 'header_form_element',
+								block_class: 'header_form__input',
+								type: 'search',
+								label: '',
+								placeholder: '',
+								value: '',
+								id: 'search',
+								})
+							a(href='#').header_form__search
+								+icon('search', 'icon--size_mod')
+
+						+lang_list({
+							mod_lang: 'header__lang',
+							items:[
+								{name: 'Ua'},
+								{name: 'Ru'}
+							]
+						})
 				button(type='button' aria-label='open/hide menu').header__menu_trigger.menuTrigger
 					span.header__menu_trigger_decor
