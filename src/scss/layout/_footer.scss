@@ -11,9 +11,9 @@
 	will-change: transform;
 }
 
-.footer__body {
+.footer__wrapper {
 	@include flex_block(row, wrap, flex-start, stretch);
-	margin: 0 -1.5rem;
+	margin: 0 -6rem -3rem 0;
 
 	@include bp($point_4) {
 		margin: 0;
@@ -22,26 +22,7 @@
 
 .footer__column {
 	@extend %global_flex_block_column_nowrap_flex-start_stretch;
-	padding: 0 1.5rem;
-
-	@include bp($point_4) {
-		padding: 0;
-	}
-
-	&:not(:last-child) {
-		margin-bottom: 1.6rem;
-	}
-
-	@include bp($point_2, min) {
-		width: 20%;
-	}
-	@include bp($point_3) {
-		width: 50%;
-	}
-	@include bp($point_4 - 1) {
-		padding: 0;
-		width: 100%;
-	}
+	padding: 0 6rem 3rem 0;
 
 	&.footer__column--mod_logo {
 		@include bp($point_3) {
@@ -57,7 +38,19 @@
 			width: 100%;
 		}
 	}
+
+	@include bp($point_2, min) {
+		width: 20%;
+	}
+	@include bp($point_3) {
+		width: 50%;
+	}
+	@include bp($point_4 - 1) {
+		// padding: 0;
+		width: 100%;
+	}
 }
+
 .footer__column_body {
 	margin-top: auto;
 	@include bp($point_2, min) {
@@ -227,7 +220,7 @@
 .footer__form {
 	@extend %global_flex_block_row_wrap_center_center;
 
-	margin: -1.4rem;
+	margin: 0 -3rem -1.5rem 0;
 
 	@include bp($point_5) {
 		justify-content: center;
@@ -236,11 +229,11 @@
 
 .form_input {
 	flex-grow: 1;
-	padding: 1.4rem;
+	padding: 0 3rem 1.5rem 0;
 }
 
 .footer__form_button {
-	padding: 1.4rem;
+	padding: 0 3rem 1.5rem 0;
 	@include bp($point_5) {
 		width: 100%;
 	}
