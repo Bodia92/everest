@@ -39,9 +39,6 @@
 	}
 }
 
-.header_in {
-}
-
 .header__body {
 	@extend %global_flex_block_row_nowrap_flex-start_center;
 	padding: 1.6rem 0;
@@ -118,6 +115,7 @@
 	color: $color_text_base;
 	background-color: $white;
 	box-shadow: inset 0 0 0 1px $color_link_base;
+
 	@extend %form_el_default;
 }
 

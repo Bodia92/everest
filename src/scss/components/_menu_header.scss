@@ -70,6 +70,7 @@
 			margin-right: var(--gl-indent);
 		}
 	}
+
 	@include bp($point_1) {
 		width: 100%;
 		&:not(:last-child) {
@@ -85,6 +86,7 @@
 	text-transform: uppercase;
 
 	@extend %transition_color;
+
 	.header__menu_item--active_mod & {
 		color: $color_tag_mod_1;
 	}
