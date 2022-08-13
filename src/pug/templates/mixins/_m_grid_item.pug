@@ -25,16 +25,18 @@ mixin grid_item (gridItem)
 				.grid__new_icon= gridItem.new_icon
 			if gridItem.content_title
 				h3.grid_item__content_title!= gridItem.content_title
-			.grid_item__tags
-				if gridItem.tag
-					.grid_item__tag
-						a.grid_item__tag_link(class= gridItem.tag_mod href="#")= gridItem.tag
-				if gridItem.icon
-					span.grid_item__icon
-						+icon( gridItem.icon, 'icon--size_mod')
-				if gridItem.autor
-					.grid_item__autor
-						a.grid_item__autor_link(href="#")= gridItem.autor
+			.grid_item__wrapper_tags
+				.grid_item__tags
+					if gridItem.tag
+						.grid_item__tag
+							a.grid_item__tag_link(class= gridItem.tag_mod href="#")= gridItem.tag
+					if gridItem.icon
+						.grid_item__wrapper_icon
+							span.grid_item__icon
+								+icon( gridItem.icon, 'icon--size_mod')
+					if gridItem.autor
+						.grid_item__autor
+							a.grid_item__autor_link(href="#")= gridItem.autor
 			if gridItem.title
 				a.grid_item__title(href="#")= gridItem.title
 			if gridItem.text
