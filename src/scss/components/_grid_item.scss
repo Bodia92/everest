@@ -144,10 +144,6 @@
 		flex-shrink: 0;
 		width: 60%;
 		margin-left: auto;
-
-		@include bp($point_5 - 1) {
-			width: 80%;
-		}
 	}
 }
 //-------------------------grid content###
@@ -157,7 +153,7 @@
 	width: 100%;
 
 	&:not(:last-child) {
-		margin-bottom: 1rem;
+		margin-bottom: 1.8rem;
 	}
 
 	.grid_item--pos_2_mod & {
@@ -336,9 +332,11 @@
 //-------------------grid title
 
 .grid_item__content_title {
+	align-items: center;
+	width: 100%;
+
 	@extend %global_flex_block_column_nowrap_flex-start_center;
 
-	text-align: center;
 	font-size: 2.6rem;
 	line-height: 1.32;
 	text-transform: uppercase;
@@ -461,6 +459,7 @@
 //-------------------------grid btn
 .grid_item__btn {
 	align-self: flex-end;
+	margin-top: auto;
 	padding: 0.4rem;
 	cursor: pointer;
 

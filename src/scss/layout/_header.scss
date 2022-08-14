@@ -17,24 +17,30 @@
 
 	&::before {
 		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 30%;
-		height: 7rem;
-		background-color: lightgoldenrodyellow;
-
+		display: none;
 		@extend %transition_transform;
 
-		transform: translate(0, -100%);
-		z-index: 100;
+		@include bp($point_1) {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 30%;
+			height: 7rem;
+			background-color: lightgoldenrodyellow;
 
-		.body--open_menu_state & {
-			transform: translate(0, 0);
+			transform: translate(0, -100%);
+			z-index: 100;
 		}
+	}
 
-		@include bp($point_5) {
-			width: 100%;
+	.body--open_menu_state & {
+		&::before {
+			transform: translate(0, 0);
+
+			@include bp($point_5) {
+				width: 100%;
+			}
 		}
 	}
 }

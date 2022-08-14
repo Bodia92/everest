@@ -56,6 +56,12 @@
 	}
 }
 
+.footer__column_body {
+	@include bp($point_3) {
+		display: none;
+	}
+}
+
 //---------------------------------------------logo
 
 .footer__logo {
