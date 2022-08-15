@@ -18,10 +18,10 @@
 		padding: 8rem 3rem 3rem;
 
 		background: lightgoldenrodyellow;
-		transform: translate(-100%, 0);
+		transform: translateX(-100%);
 
 		.body--open_menu_state & {
-			transform: translate(0, 0);
+			transform: translateX(0);
 		}
 
 		@include bp($point_4) {

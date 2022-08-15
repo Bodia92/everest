@@ -190,6 +190,7 @@
 }
 
 .grid_item__tag_link {
+	display: inline-flex;
 	@extend %transition_color;
 
 	&.grid_item__tag--color_mod_1 {
