@@ -52,7 +52,7 @@
 		}
 	}
 
-	@include bp($point_1 -1) {
+	@include bp($point_1 - 1) {
 		@include flex_block(column, nowrap, center, center);
 		flex-grow: 1;
 		text-align: center;
@@ -73,7 +73,7 @@
 		}
 	}
 
-	@include bp($point_1 -1) {
+	@include bp($point_1 - 1) {
 		width: 100%;
 		&:not(:last-child) {
 			margin-bottom: 1.8rem;
