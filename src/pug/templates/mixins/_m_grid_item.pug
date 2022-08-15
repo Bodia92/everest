@@ -3,12 +3,13 @@
 mixin grid_item (gridItem)
 	.grid_item(class=gridItem.pos_mod)
 		if gridItem.background
-			+picture({
-					img: gridItem.background,
-					class: 'grid_item__background',
-					img_class: 'grid_item__background_img',
-					alt: 'background',
-				})
+			a.grid_item__link_bg(href="#")
+				+picture({
+						img: gridItem.background,
+						class: 'grid_item__background',
+						img_class: 'grid_item__background_img',
+						alt: 'background',
+					})
 		if gridItem.picture
 			a.grid_item__image(href="#")
 				+picture({

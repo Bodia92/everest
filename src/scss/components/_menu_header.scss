@@ -16,6 +16,7 @@
 		overflow-y: auto;
 
 		padding: 8rem 3rem 3rem;
+		display: block;
 
 		background: lightgoldenrodyellow;
 		transform: translateX(-100%);
@@ -35,6 +36,7 @@
 }
 .header__menu {
 	@extend %global_flex_block_row_wrap_flex-start_center;
+	height: 100%;
 
 	@include bp($point_1) {
 		@include flex_block(column, nowrap, flex-start, center);
@@ -50,8 +52,8 @@
 		}
 	}
 
-	@include bp($point_1) {
-		@include flex_block(column, nowrap, flex-start, center);
+	@include bp($point_1 -1) {
+		@include flex_block(column, nowrap, center, center);
 		flex-grow: 1;
 		text-align: center;
 
@@ -71,7 +73,7 @@
 		}
 	}
 
-	@include bp($point_1) {
+	@include bp($point_1 -1) {
 		width: 100%;
 		&:not(:last-child) {
 			margin-bottom: 1.8rem;
