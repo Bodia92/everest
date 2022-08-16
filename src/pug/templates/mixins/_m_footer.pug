@@ -7,15 +7,16 @@ mixin footer
 						img(src="images/footer_logo.png", class="footer__logo_img" alt="logo")
 					.footer__column_body
 						h3.footer__title Платформа AI
-						+social({
-							mod_block: 'footer__social',
-							items: [
-								{name_icon: 'facebook', mod_link: 'social_link--size_1_mod', mod_icon:'icon--size_mod'},
-								{name_icon: 'twitter', mod_link: 'social_link--size_2_mod', mod_icon:'icon--size_mod'},
-								{name_icon: 'rss', mod_link: 'social_link--size_3_mod', mod_icon:'icon--size_mod'},
-								{name_icon: 'youtube', mod_link: 'social_link--size_4_mod', mod_icon:'icon--size_mod'}
-							]
-						})
+						.footer__social_body
+							+social({
+								mod_block: 'footer__social',
+								items: [
+									{name_icon: 'facebook', mod_link: 'social_link--size_1_mod', mod_icon:'icon--size_mod'},
+									{name_icon: 'twitter', mod_link: 'social_link--size_2_mod', mod_icon:'icon--size_mod'},
+									{name_icon: 'rss', mod_link: 'social_link--size_3_mod', mod_icon:'icon--size_mod'},
+									{name_icon: 'youtube', mod_link: 'social_link--size_4_mod', mod_icon:'icon--size_mod'}
+								]
+							})
 						.footer__copyright
 							span.footer__copyright_icon ©
 							span.footer__copyright_text 2020 Everest.
