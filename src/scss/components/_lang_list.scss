@@ -6,19 +6,19 @@
 .lang_list__item {
 	position: relative;
 	&:not(:last-child) {
-		margin-right: 0.6rem;
+		margin-right: .6rem;
 	}
 
 	&:not(:last-child) {
-		padding-right: 0.6rem;
+		padding-right: .6rem;
 
 		&::after {
 			content: "";
 			position: absolute;
 			top: 50%;
 			right: 0;
-			margin: -0.8rem 0 0 -0.5rem;
-			width: 0.2rem;
+			margin: -.8rem 0 0 -.5rem;
+			width: .2rem;
 			height: 1.6rem;
 
 			background-color: $color_link_base;

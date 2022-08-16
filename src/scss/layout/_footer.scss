@@ -99,7 +99,7 @@
 	text-transform: uppercase;
 	border-bottom: solid 1px $white;
 	&:not(:last-child) {
-		margin-bottom: 0.8rem;
+		margin-bottom: .8rem;
 	}
 }
 
@@ -174,7 +174,7 @@
 .footer__menu_item {
 	padding-bottom: 2rem;
 	&:not(:last-child) {
-		margin-bottom: 0.8rem;
+		margin-bottom: .8rem;
 		border-bottom: solid 1px $white;
 	}
 }
