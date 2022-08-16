@@ -20,13 +20,13 @@
 	@extend %global_flex_block_column_nowrap_flex-start_stretch;
 	padding: 0 6rem 3rem 0;
 
-	&.footer__column--mod_logo {
+	&.footer__column--logo_mod {
 		@include bp($point_3) {
 			width: 100%;
 		}
 	}
 
-	&.footer__column--mod_width {
+	&.footer__column--width_mod {
 		@include bp($point_2, min) {
 			width: 40%;
 		}
@@ -35,13 +35,16 @@
 		}
 	}
 
-	&.footer__column--mod_mobile {
+	&.footer__column--mobile_mod {
 		display: none;
 
 		@include bp($point_3) {
-			@include flex_block(row, wrap, center, center);
+			@include flex_block(row, nowrap, center, center);
 			width: 100%;
 			text-align: center;
+		}
+		@include bp($point_7) {
+			flex-wrap: wrap;
 		}
 	}
 
@@ -109,20 +112,23 @@
 	}
 }
 //---------------------------------------------footer title###
+.footer__social_body {
+	.footer__column--mobile_mod & {
+		@include bp($point_8, min) {
+			margin-right: auto;
+		}
 
-.footer__social {
-	color: $white;
-
-	.footer__column--mod_mobile & {
-		margin-right: auto;
-
-		@include bp($point_8) {
+		@include bp($point_8 - 1) {
 			margin-right: 0;
 			&:not(:last-child) {
 				margin-bottom: 1rem;
 			}
 		}
 	}
+}
+
+.footer__social {
+	color: $white;
 }
 
 .footer__text {
@@ -141,6 +147,7 @@
 //----------------------------------------------copyright
 
 .footer__copyright {
+	flex-shrink: 0;
 	display: grid;
 	grid-template-columns: 3rem 1fr;
 }
